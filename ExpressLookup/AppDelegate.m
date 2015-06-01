@@ -22,6 +22,8 @@
 	TabBarController *tabBarController = [[TabBarController alloc] init];
 	[_window setRootViewController:tabBarController];
 	[_window makeKeyAndVisible];
+	
+	[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     return YES;
 }
 
