@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  SettingsViewController.h
 //  ExpressLookup
 //
 //  Created by Kyon on 15/6/1.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface SettingsViewController : UIViewController
 
 @end
-
