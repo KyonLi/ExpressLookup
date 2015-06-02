@@ -17,4 +17,8 @@
     return self;
 }
 
+- (NSString *)description {
+	return [NSString stringWithFormat:@"%@ %@", _time, _context];
+}
+
 @end

@@ -8,12 +8,14 @@
 
 #import "LookupViewController.h"
 #import "MXPullDownMenu.h"
+#import "ResultTableViewController.h"
 
 @interface LookupViewController () <MXPullDownMenuDelegate>
 {
 	NSArray *_companyArray;
 }
 @property (weak, nonatomic) IBOutlet UIView *companyView;
+@property (weak, nonatomic) IBOutlet UITextField *textField;
 
 @end
 
@@ -40,6 +42,14 @@
 
 - (void)PullDownMenu:(MXPullDownMenu *)pullDownMenu didSelectRowAtColumn:(NSInteger)column row:(NSInteger)row {
 	NSLog(@"%@", _companyArray[row]);
+}
+- (IBAction)buttonClicked:(UIButton *)sender {
+	ResultTableViewController *resultVC = [[ResultTableViewController alloc] initWithExpressNumber:@"550155174891" andCompany:@"tiantian"];
+	[[self navigationController] pushViewController:resultVC animated:YES];
+}
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+	[_textField resignFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning {

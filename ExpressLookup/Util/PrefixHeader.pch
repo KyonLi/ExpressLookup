@@ -1,0 +1,18 @@
+//
+//  PrefixHeader.pch
+//  ExpressLookup
+//
+//  Created by Kyon on 15/6/2.
+//  Copyright (c) 2015年 Kyon Li. All rights reserved.
+//
+
+#ifndef ExpressLookup_PrefixHeader_pch
+#define ExpressLookup_PrefixHeader_pch
+#import <Foundation/Foundation.h>
+
+typedef enum : NSUInteger {
+	expressInfo,
+	expressData,
+} cellType;
+
+#endif
