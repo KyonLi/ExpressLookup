@@ -7,7 +7,6 @@
 //
 
 #import "ResultTableViewController.h"
-#import "SVProgressHUD.h"
 #import "MBProgressHUD.h"
 #import "DownloadData.h"
 #import "Express.h"
@@ -18,6 +17,7 @@
 {
 	NSString *_expressNumber;
 	NSString *_company;
+	NSDictionary *_companyDic;
 	Express *_express;
 	NSArray *_dataArray;
 }
@@ -29,6 +29,8 @@
 	if (self = [super init]) {
 		_expressNumber = nu;
 		_company = com;
+		NSString *dicPath = [[NSBundle mainBundle] pathForResource:@"companyDic" ofType:@"txt"];
+		_companyDic = [NSDictionary dictionaryWithContentsOfFile:dicPath];
 	}
 	return self;
 }
@@ -44,19 +46,15 @@
 		_express = data;
 		_dataArray = [data expressData];
 		[[self tableView] reloadData];
-//		[SVProgressHUD dismiss];
 		[MBProgressHUD hideHUDForView:self.tableView animated:YES];
-	} andExpressNumber:_expressNumber andCompany:_company];
+	} andExpressNumber:_expressNumber andCompany:_companyDic[_company]];
 	
 	UINib *infoNib = [UINib nibWithNibName:@"ExpressInfoTableViewCell" bundle:nil];
 	[[self tableView] registerNib:infoNib forCellReuseIdentifier:@"InfoCell"];
 	UINib *dataNib = [UINib nibWithNibName:@"ExpressDataTableViewCell" bundle:nil];
 	[[self tableView] registerNib:dataNib forCellReuseIdentifier:@"DataCell"];
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-	[super viewDidAppear:animated];
-//	[SVProgressHUD showWithStatus:@"查询中，请稍候..."];
+	
+	[[self tableView] setTableFooterView:[[UIView alloc] init]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -75,15 +73,12 @@
 	ResultTableViewCell *cell = nil;
 	if (indexPath.row == 0) {
 		cell = [[self tableView] dequeueReusableCellWithIdentifier:@"InfoCell"];
-		[cell refreshCellWithType:expressInfo andData:nil orInfo:[NSString stringWithFormat:@"圆通快递 %@", _expressNumber]];
+		[cell refreshCellWithType:expressInfo andData:nil orInfo:[NSString stringWithFormat:@"%@ %@", _company, _expressNumber]];
 	} else {
 		ExpressData *data = _dataArray[indexPath.row - 1];
 		cell = [[self tableView] dequeueReusableCellWithIdentifier:@"DataCell"];
 		[cell refreshCellWithType:expressData andData:data orInfo:nil];
 	}
-    
-	
-    
     return cell;
 }
 

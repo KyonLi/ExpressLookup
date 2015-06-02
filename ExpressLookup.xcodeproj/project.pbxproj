@@ -49,6 +49,7 @@
 		B7F35A501B1D511E001E2488 /* ExpressInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7F35A4E1B1D511E001E2488 /* ExpressInfoTableViewCell.xib */; };
 		B7F35A541B1D54A3001E2488 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F35A531B1D54A3001E2488 /* MBProgressHUD.m */; };
 		B7F35A941B1D63B7001E2488 /* ExpressDataTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7F35A931B1D63B7001E2488 /* ExpressDataTableViewCell.xib */; };
+		B7F35ADA1B1DB388001E2488 /* companyDic.txt in Resources */ = {isa = PBXBuildFile; fileRef = B7F35AD91B1DB388001E2488 /* companyDic.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -133,6 +134,7 @@
 		B7F35A531B1D54A3001E2488 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		B7F35A931B1D63B7001E2488 /* ExpressDataTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpressDataTableViewCell.xib; sourceTree = "<group>"; };
 		B7F35A951B1D6940001E2488 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		B7F35AD91B1DB388001E2488 /* companyDic.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = companyDic.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -342,6 +344,7 @@
 		B77A27921B1C7E4900950D29 /* Files */ = {
 			isa = PBXGroup;
 			children = (
+				B7F35AD91B1DB388001E2488 /* companyDic.txt */,
 				B77A27931B1C7E4900950D29 /* companyArray.txt */,
 			);
 			path = Files;
@@ -431,6 +434,7 @@
 				B77A27941B1C7E4900950D29 /* companyArray.txt in Resources */,
 				B7F35A501B1D511E001E2488 /* ExpressInfoTableViewCell.xib in Resources */,
 				B77A27831B1C5E2000950D29 /* MyExpressViewController.xib in Resources */,
+				B7F35ADA1B1DB388001E2488 /* companyDic.txt in Resources */,
 				B77A25F41B1BFFBA00950D29 /* LaunchScreen.xib in Resources */,
 				B77A27881B1C5E4B00950D29 /* LookupViewController.xib in Resources */,
 				B77A25F11B1BFFBA00950D29 /* Images.xcassets in Resources */,
