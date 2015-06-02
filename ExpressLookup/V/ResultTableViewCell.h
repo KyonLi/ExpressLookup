@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 @class ExpressData;
+@class Express;
 
 @interface ResultTableViewCell : UITableViewCell
 
 @property (nonatomic, retain) NSString *type;
 
-- (void)refreshCellWithType:(cellType)cellType andData:(ExpressData *)data orInfo:(NSString *)info;
+- (void)refreshCellWithType:(cellType)cellType andData:(ExpressData *)data orExpress:(Express *)express;
 
 @end

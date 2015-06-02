@@ -7,7 +7,7 @@
 //
 
 #import "TabBarController.h"
-#import "MyExpressViewController.h"
+#import "MyExpressTableViewController.h"
 #import "LookupViewController.h"
 #import "SettingsViewController.h"
 
@@ -20,7 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-	MyExpressViewController *myExpressVC = [[MyExpressViewController alloc] init];
+	MyExpressTableViewController *myExpressVC = [[MyExpressTableViewController alloc] init];
 	UINavigationController *myExpressNav = [[UINavigationController alloc] initWithRootViewController:myExpressVC];
 	[[myExpressNav tabBarItem] setTitle:@"我的"];
 	

@@ -28,6 +28,7 @@
 @property (nonatomic, retain, readonly) NSString *ischeck;
 @property (nonatomic, retain, readonly) NSString *pickuptime;
 @property (nonatomic, retain, readonly) NSString *comurl;
+@property (nonatomic, retain) NSString *companyName;
 
 - (instancetype)initWithDic:(NSDictionary *)dic;
 

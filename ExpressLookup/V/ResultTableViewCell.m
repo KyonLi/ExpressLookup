@@ -8,6 +8,7 @@
 
 #import "ResultTableViewCell.h"
 #import "ExpressData.h"
+#import "Express.h"
 
 @implementation ResultTableViewCell
 
@@ -16,12 +17,15 @@
 	
 }
 
-- (void)refreshCellWithType:(cellType)cellType andData:(ExpressData *)data orInfo:(NSString *)info {
+- (void)refreshCellWithType:(cellType)cellType andData:(ExpressData *)data orExpress:(Express *)express {
 	if (cellType == expressInfo) {
 		UIImageView *imageView = (UIImageView *)[[self contentView] viewWithTag:100];
 		UILabel *label = (UILabel *)[[self contentView] viewWithTag:101];
-		[label setText:info];
-		
+		if ([express.status isEqualToString:@"1"]) {
+			[label setText:[NSString stringWithFormat:@"%@ %@", express.companyName, express.nu]];
+		} else {
+			[label setText:[NSString stringWithFormat:@"%@", express.message]];
+		}
 	}
 	else if (cellType == expressData) {
 		UILabel *label1 = (UILabel *)[[self contentView] viewWithTag:200];

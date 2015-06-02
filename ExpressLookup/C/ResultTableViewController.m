@@ -12,6 +12,7 @@
 #import "Express.h"
 #import "ExpressData.h"
 #import "ResultTableViewCell.h"
+#import "SearchHistory.h"
 
 @interface ResultTableViewController ()
 {
@@ -44,7 +45,11 @@
 	
 	[DownloadData getJsonDataWithBlock:^(Express *data, NSError *error) {
 		_express = data;
+		[_express setCompanyName:_company];
 		_dataArray = [data expressData];
+		if ([data.status isEqualToString:@"1"]) {
+			[[SearchHistory sharedInstance] addHistoryRecord:_express];
+		}
 		[[self tableView] reloadData];
 		[MBProgressHUD hideHUDForView:self.tableView animated:YES];
 	} andExpressNumber:_expressNumber andCompany:_companyDic[_company]];
@@ -73,11 +78,11 @@
 	ResultTableViewCell *cell = nil;
 	if (indexPath.row == 0) {
 		cell = [[self tableView] dequeueReusableCellWithIdentifier:@"InfoCell"];
-		[cell refreshCellWithType:expressInfo andData:nil orInfo:[NSString stringWithFormat:@"%@ %@", _company, _expressNumber]];
+		[cell refreshCellWithType:expressInfo andData:nil orExpress:_express];
 	} else {
 		ExpressData *data = _dataArray[indexPath.row - 1];
 		cell = [[self tableView] dequeueReusableCellWithIdentifier:@"DataCell"];
-		[cell refreshCellWithType:expressData andData:data orInfo:nil];
+		[cell refreshCellWithType:expressData andData:data orExpress:nil];
 	}
     return cell;
 }

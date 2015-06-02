@@ -33,8 +33,6 @@
 		B77A26CD1B1C275100950D29 /* ExpressData.m in Sources */ = {isa = PBXBuildFile; fileRef = B77A26CC1B1C275100950D29 /* ExpressData.m */; };
 		B77A277B1B1C5BD000950D29 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B77A277A1B1C5BD000950D29 /* AppDelegate.m */; };
 		B77A277E1B1C5C3600950D29 /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = B77A277D1B1C5C3600950D29 /* TabBarController.m */; };
-		B77A27821B1C5E2000950D29 /* MyExpressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B77A27801B1C5E2000950D29 /* MyExpressViewController.m */; };
-		B77A27831B1C5E2000950D29 /* MyExpressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B77A27811B1C5E2000950D29 /* MyExpressViewController.xib */; };
 		B77A27871B1C5E4B00950D29 /* LookupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B77A27851B1C5E4B00950D29 /* LookupViewController.m */; };
 		B77A27881B1C5E4B00950D29 /* LookupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B77A27861B1C5E4B00950D29 /* LookupViewController.xib */; };
 		B77A278C1B1C5E5C00950D29 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B77A278A1B1C5E5C00950D29 /* SettingsViewController.m */; };
@@ -50,6 +48,8 @@
 		B7F35A541B1D54A3001E2488 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F35A531B1D54A3001E2488 /* MBProgressHUD.m */; };
 		B7F35A941B1D63B7001E2488 /* ExpressDataTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7F35A931B1D63B7001E2488 /* ExpressDataTableViewCell.xib */; };
 		B7F35ADA1B1DB388001E2488 /* companyDic.txt in Resources */ = {isa = PBXBuildFile; fileRef = B7F35AD91B1DB388001E2488 /* companyDic.txt */; };
+		B7F35ADD1B1DC64F001E2488 /* MyExpressTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F35ADC1B1DC64F001E2488 /* MyExpressTableViewController.m */; };
+		B7F35AE31B1DCBE7001E2488 /* SearchHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F35AE21B1DCBE7001E2488 /* SearchHistory.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -107,9 +107,6 @@
 		B77A277A1B1C5BD000950D29 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B77A277C1B1C5C3600950D29 /* TabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
 		B77A277D1B1C5C3600950D29 /* TabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
-		B77A277F1B1C5E2000950D29 /* MyExpressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyExpressViewController.h; sourceTree = "<group>"; };
-		B77A27801B1C5E2000950D29 /* MyExpressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyExpressViewController.m; sourceTree = "<group>"; };
-		B77A27811B1C5E2000950D29 /* MyExpressViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyExpressViewController.xib; sourceTree = "<group>"; };
 		B77A27841B1C5E4B00950D29 /* LookupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LookupViewController.h; sourceTree = "<group>"; };
 		B77A27851B1C5E4B00950D29 /* LookupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LookupViewController.m; sourceTree = "<group>"; };
 		B77A27861B1C5E4B00950D29 /* LookupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LookupViewController.xib; sourceTree = "<group>"; };
@@ -135,6 +132,10 @@
 		B7F35A931B1D63B7001E2488 /* ExpressDataTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpressDataTableViewCell.xib; sourceTree = "<group>"; };
 		B7F35A951B1D6940001E2488 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		B7F35AD91B1DB388001E2488 /* companyDic.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = companyDic.txt; sourceTree = "<group>"; };
+		B7F35ADB1B1DC64F001E2488 /* MyExpressTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyExpressTableViewController.h; sourceTree = "<group>"; };
+		B7F35ADC1B1DC64F001E2488 /* MyExpressTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyExpressTableViewController.m; sourceTree = "<group>"; };
+		B7F35AE11B1DCBE7001E2488 /* SearchHistory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchHistory.h; sourceTree = "<group>"; };
+		B7F35AE21B1DCBE7001E2488 /* SearchHistory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchHistory.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,9 +198,8 @@
 			children = (
 				B77A277C1B1C5C3600950D29 /* TabBarController.h */,
 				B77A277D1B1C5C3600950D29 /* TabBarController.m */,
-				B77A277F1B1C5E2000950D29 /* MyExpressViewController.h */,
-				B77A27801B1C5E2000950D29 /* MyExpressViewController.m */,
-				B77A27811B1C5E2000950D29 /* MyExpressViewController.xib */,
+				B7F35ADB1B1DC64F001E2488 /* MyExpressTableViewController.h */,
+				B7F35ADC1B1DC64F001E2488 /* MyExpressTableViewController.m */,
 				B77A27841B1C5E4B00950D29 /* LookupViewController.h */,
 				B77A27851B1C5E4B00950D29 /* LookupViewController.m */,
 				B77A27861B1C5E4B00950D29 /* LookupViewController.xib */,
@@ -255,6 +255,8 @@
 		B77A260E1B1C04B000950D29 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				B7F35AE11B1DCBE7001E2488 /* SearchHistory.h */,
+				B7F35AE21B1DCBE7001E2488 /* SearchHistory.m */,
 				B77A27781B1C593F00950D29 /* Macro.h */,
 				B7F35A951B1D6940001E2488 /* PrefixHeader.pch */,
 			);
@@ -433,7 +435,6 @@
 				B7F35A941B1D63B7001E2488 /* ExpressDataTableViewCell.xib in Resources */,
 				B77A27941B1C7E4900950D29 /* companyArray.txt in Resources */,
 				B7F35A501B1D511E001E2488 /* ExpressInfoTableViewCell.xib in Resources */,
-				B77A27831B1C5E2000950D29 /* MyExpressViewController.xib in Resources */,
 				B7F35ADA1B1DB388001E2488 /* companyDic.txt in Resources */,
 				B77A25F41B1BFFBA00950D29 /* LaunchScreen.xib in Resources */,
 				B77A27881B1C5E4B00950D29 /* LookupViewController.xib in Resources */,
@@ -478,9 +479,10 @@
 				B77A277B1B1C5BD000950D29 /* AppDelegate.m in Sources */,
 				B77A26B91B1C22BB00950D29 /* AFURLSessionManager.m in Sources */,
 				B77A277E1B1C5C3600950D29 /* TabBarController.m in Sources */,
-				B77A27821B1C5E2000950D29 /* MyExpressViewController.m in Sources */,
 				B77A26CA1B1C26E200950D29 /* Express.m in Sources */,
+				B7F35AE31B1DCBE7001E2488 /* SearchHistory.m in Sources */,
 				B7F35A4B1B1D5074001E2488 /* SVProgressHUD.m in Sources */,
+				B7F35ADD1B1DC64F001E2488 /* MyExpressTableViewController.m in Sources */,
 				B77A25E61B1BFFBA00950D29 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
