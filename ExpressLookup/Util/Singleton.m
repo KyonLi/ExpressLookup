@@ -12,6 +12,9 @@
 @implementation Singleton
 {
 	NSMutableArray *_historyArray;
+	NSDictionary *_companyDic;
+	NSArray *_companyArray;
+	NSArray *_companyArrayHtmlOnly;
 }
 
 static Singleton *SINGLETON = nil;
@@ -68,6 +71,13 @@ static bool isFirstAccess = YES;
     }
     self = [super init];
 	_historyArray = [[NSMutableArray alloc] init];
+	
+	NSString *dicPath = [[NSBundle mainBundle] pathForResource:@"companyDic" ofType:@"txt"];
+	_companyDic = [NSDictionary dictionaryWithContentsOfFile:dicPath];
+	NSString *arrayPath = [[NSBundle mainBundle] pathForResource:@"companyArray" ofType:@"txt"];
+	_companyArray = [NSArray arrayWithContentsOfFile:arrayPath];
+	NSString *arrayHtmlOnlyPath = [[NSBundle mainBundle] pathForResource:@"companyArrayHtmlOnly" ofType:@"txt"];
+	_companyArrayHtmlOnly = [NSArray arrayWithContentsOfFile:arrayHtmlOnlyPath];
     return self;
 }
 
@@ -84,6 +94,28 @@ static bool isFirstAccess = YES;
 
 - (NSArray *)getHistoryRecords {
 	return [NSArray arrayWithArray:_historyArray];
+}
+
+- (NSString *)translateCompanyNameIntoCompanyID:(NSString *)companyName {
+	return [_companyDic valueForKey:companyName];
+}
+
+- (NSArray *)getCompanyNameArray {
+	return _companyArray;
+}
+
+- (NSArray *)gatHtmlOnlyCompanyNameArray {
+	return _companyArrayHtmlOnly;
+}
+
+- (BOOL)isHtmlOnly:(NSString *)companyName {
+	for (NSString *com in _companyArrayHtmlOnly) {
+		if ([com isEqualToString:companyName]) {
+			return YES;
+			break;
+		}
+	}
+	return NO;
 }
 
 @end

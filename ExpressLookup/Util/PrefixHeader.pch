@@ -9,6 +9,7 @@
 #ifndef ExpressLookup_PrefixHeader_pch
 #define ExpressLookup_PrefixHeader_pch
 #import <Foundation/Foundation.h>
+#import "Singleton.h"
 
 typedef enum : NSUInteger {
 	expressInfo,

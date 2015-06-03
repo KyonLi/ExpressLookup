@@ -14,5 +14,9 @@
 + (Singleton*)sharedInstance;
 - (void)addHistoryRecord:(Express *)express;
 - (NSArray *)getHistoryRecords;
+- (NSString *)translateCompanyNameIntoCompanyID:(NSString *)companyName;
+- (NSArray *)getCompanyNameArray;
+- (NSArray *)gatHtmlOnlyCompanyNameArray;
+- (BOOL)isHtmlOnly:(NSString *)companyName;
 
 @end

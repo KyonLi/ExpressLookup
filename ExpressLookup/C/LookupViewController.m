@@ -13,7 +13,6 @@
 
 @interface LookupViewController () <MXPullDownMenuDelegate>
 {
-	NSArray *_companyArray;
 	NSString *_companyName;
 }
 @property (weak, nonatomic) IBOutlet UIView *companyView;
@@ -25,8 +24,7 @@
 
 - (void)viewDidAppear:(BOOL)animated {
 	[super viewDidAppear:animated];
-	NSArray *companyArray = @[_companyArray];
-	MXPullDownMenu *menu = [[MXPullDownMenu alloc] initWithArray:companyArray selectedColor:[UIColor blueColor]];
+	MXPullDownMenu *menu = [[MXPullDownMenu alloc] initWithArray:@[[[Singleton sharedInstance] getCompanyNameArray]] selectedColor:[UIColor blueColor]];
 	[menu setDelegate:self];
 	[menu setFrame:CGRectMake(0, _companyView.frame.origin.y, self.view.frame.size.width, _companyView.frame.size.height)];
 	[self.view addSubview:menu];
@@ -36,13 +34,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 	[[self navigationItem] setTitle:@"查询"];
-	
-	NSString *arrayPath = [[NSBundle mainBundle] pathForResource:@"companyArray" ofType:@"txt"];
-	_companyArray = [NSArray arrayWithContentsOfFile:arrayPath];
 }
 
 - (void)PullDownMenu:(MXPullDownMenu *)pullDownMenu didSelectRowAtColumn:(NSInteger)column row:(NSInteger)row {
-	_companyName = _companyArray[row];
+	_companyName = [[Singleton sharedInstance] getCompanyNameArray][row];
 }
 
 - (IBAction)buttonClicked:(UIButton *)sender {
