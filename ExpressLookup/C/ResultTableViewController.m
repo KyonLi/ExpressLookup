@@ -49,7 +49,7 @@
 			}
 			[[self tableView] reloadData];
 			[MBProgressHUD hideHUDForView:self.tableView animated:YES];
-		} andExpressNumber:_expressNumber andCompany:[[Singleton sharedInstance] translateCompanyNameIntoCompanyID:_company]];
+		} andExpressNumber:_expressNumber andCompany:[[Singleton sharedInstance] translateCompanyNameIntoCompanyID:_company] andOrder:@"asc"];
 	} else {
 		[DownloadData getJsonDataWithBlock:^(Express *data, NSError *error) {
 			_express = data;
@@ -60,7 +60,7 @@
 			}
 			[[self tableView] reloadData];
 			[MBProgressHUD hideHUDForView:self.tableView animated:YES];
-		} andExpressNumber:_expressNumber andCompany:[[Singleton sharedInstance] translateCompanyNameIntoCompanyID:_company]];
+		} andExpressNumber:_expressNumber andCompany:[[Singleton sharedInstance] translateCompanyNameIntoCompanyID:_company] andOrder:@"desc"];
 	}
 	
 	UINib *infoNib = [UINib nibWithNibName:@"ExpressInfoTableViewCell" bundle:nil];

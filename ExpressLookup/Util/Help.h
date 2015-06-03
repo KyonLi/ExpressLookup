@@ -10,6 +10,6 @@
 
 @interface Help : NSObject
 
-+ (NSDictionary *)htmlToDictionary:(NSData *)data Company:(NSString *)com;
++ (NSDictionary *)htmlToDictionary:(NSData *)data Company:(NSString *)com Order:(NSString *)order;
 
 @end

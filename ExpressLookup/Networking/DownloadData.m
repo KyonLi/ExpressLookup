@@ -14,8 +14,8 @@
 
 @implementation DownloadData
 
-+ (NSURLSessionDataTask *)getJsonDataWithBlock:(void (^)(Express *data, NSError *error))block andExpressNumber:(NSString *)nu andCompany:(NSString *)com {
-    return [[AFAppDotNetAPIClient sharedClient] GET:[NSString stringWithFormat:@"http://api.kuaidi100.com/api?id=%@&com=%@&nu=%@&valicode=&show=0&muti=1&order=desc", KUAIDI_KEY, com, nu] parameters:nil success:^(NSURLSessionDataTask *task, NSData *data) {
++ (NSURLSessionDataTask *)getJsonDataWithBlock:(void (^)(Express *data, NSError *error))block andExpressNumber:(NSString *)nu andCompany:(NSString *)com andOrder:(NSString *)order {
+    return [[AFAppDotNetAPIClient sharedClient] GET:[NSString stringWithFormat:@"http://api.kuaidi100.com/api?id=%@&com=%@&nu=%@&valicode=&show=0&muti=1&order=%@", KUAIDI_KEY, com, nu, order] parameters:nil success:^(NSURLSessionDataTask *task, NSData *data) {
         NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
         Express *express = [[Express alloc] initWithDic:dic];
         if (block) {
@@ -30,9 +30,9 @@
     }];
 }
 
-+ (NSURLSessionDataTask *)getHtmlDataWithBlock:(void (^)(Express *data, NSError *error))block andExpressNumber:(NSString *)nu andCompany:(NSString *)com{
++ (NSURLSessionDataTask *)getHtmlDataWithBlock:(void (^)(Express *data, NSError *error))block andExpressNumber:(NSString *)nu andCompany:(NSString *)com andOrder:(NSString *)order {
 	return [[AFAppDotNetAPIClient sharedClient] GET:[NSString stringWithFormat:@"http://wap.kuaidi100.com/wap_result.jsp?rand=20120517&id=%@&fromWeb=null&&postid=%@", com, nu] parameters:nil success:^(NSURLSessionDataTask *task, NSData *data) {
-		NSDictionary *dic = [Help htmlToDictionary:data Company:com];
+		NSDictionary *dic = [Help htmlToDictionary:data Company:com Order:order];
 		Express *express = [[Express alloc] initWithDic:dic];
 		if (block) {
 			block (express, nil);

@@ -11,7 +11,7 @@
 
 @implementation Help
 
-+ (NSDictionary *)htmlToDictionary:(NSData *)data Company:(NSString *)com {
++ (NSDictionary *)htmlToDictionary:(NSData *)data Company:(NSString *)com Order:(NSString *)order {
 	NSMutableDictionary *dic = [NSMutableDictionary new];
 	[dic setValue:com forKey:@"com"];
 	
@@ -52,19 +52,36 @@
 	} else {
 		[dic setValue:@"1" forKey:@"status"];
 		NSMutableArray *expressData = [NSMutableArray new];
-		for (NSInteger i = ps.count - 1; i >= 4; i--) {
-			TFHppleElement *element = [ps objectAtIndex:i];
-			NSString *time = [element text];
-			time = [time substringFromIndex:1];
-			
-			NSString *rawStr = [element raw];
-			NSRange startRange = [rawStr rangeOfString:@"<br/> "];
-			NSRange endRange = [rawStr rangeOfString:@"</p>"];
-			NSRange range = NSMakeRange(startRange.location + startRange.length, endRange.location - startRange.location - startRange.length);
-			NSString *context = [rawStr substringWithRange:range];
-			
-			NSDictionary *data = [NSDictionary dictionaryWithObjectsAndKeys:time, @"time", context, @"context", nil];
-			[expressData addObject:data];
+		if ([order isEqualToString:@"desc"]) {
+			for (NSInteger i = ps.count - 1; i >= 4; i--) {
+				TFHppleElement *element = [ps objectAtIndex:i];
+				NSString *time = [element text];
+				time = [time substringFromIndex:1];
+				
+				NSString *rawStr = [element raw];
+				NSRange startRange = [rawStr rangeOfString:@"<br/> "];
+				NSRange endRange = [rawStr rangeOfString:@"</p>"];
+				NSRange range = NSMakeRange(startRange.location + startRange.length, endRange.location - startRange.location - startRange.length);
+				NSString *context = [rawStr substringWithRange:range];
+				
+				NSDictionary *data = [NSDictionary dictionaryWithObjectsAndKeys:time, @"time", context, @"context", nil];
+				[expressData addObject:data];
+			}
+		} else {
+			for (NSInteger i = 4; i < ps.count; i++) {
+				TFHppleElement *element = [ps objectAtIndex:i];
+				NSString *time = [element text];
+				time = [time substringFromIndex:1];
+				
+				NSString *rawStr = [element raw];
+				NSRange startRange = [rawStr rangeOfString:@"<br/> "];
+				NSRange endRange = [rawStr rangeOfString:@"</p>"];
+				NSRange range = NSMakeRange(startRange.location + startRange.length, endRange.location - startRange.location - startRange.length);
+				NSString *context = [rawStr substringWithRange:range];
+				
+				NSDictionary *data = [NSDictionary dictionaryWithObjectsAndKeys:time, @"time", context, @"context", nil];
+				[expressData addObject:data];
+			}
 		}
 		[dic setValue:expressData forKey:@"data"];
 	}

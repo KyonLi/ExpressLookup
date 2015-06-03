@@ -11,7 +11,7 @@
 
 @interface DownloadData : NSObject
 
-+ (NSURLSessionDataTask *)getJsonDataWithBlock:(void (^)(Express *data, NSError *error))block andExpressNumber:(NSString *)nu andCompany:(NSString *)com;
-+ (NSURLSessionDataTask *)getHtmlDataWithBlock:(void (^)(Express *data, NSError *error))block andExpressNumber:(NSString *)nu andCompany:(NSString *)com;
++ (NSURLSessionDataTask *)getJsonDataWithBlock:(void (^)(Express *data, NSError *error))block andExpressNumber:(NSString *)nu andCompany:(NSString *)com andOrder:(NSString *)order;
++ (NSURLSessionDataTask *)getHtmlDataWithBlock:(void (^)(Express *data, NSError *error))block andExpressNumber:(NSString *)nu andCompany:(NSString *)com andOrder:(NSString *)order;
 
 @end
