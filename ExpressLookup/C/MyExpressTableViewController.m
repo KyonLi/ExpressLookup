@@ -9,7 +9,6 @@
 #import "MyExpressTableViewController.h"
 #import "ResultTableViewCell.h"
 #import "Express.h"
-#import "Singleton.h"
 #import "ResultTableViewController.h"
 
 @interface MyExpressTableViewController ()
@@ -60,7 +59,9 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	
+	Express *express = [_historyArray objectAtIndex:indexPath.row];
+	ResultTableViewController *resultVC = [[ResultTableViewController alloc] initWithExpressNumber:express.nu andCompany:express.companyName];
+	[[self navigationController] pushViewController:resultVC animated:YES];
 }
 
 @end

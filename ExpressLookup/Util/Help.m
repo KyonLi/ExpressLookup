@@ -34,9 +34,9 @@
 	[dic setValue:comcontact forKey:@"comcontact"];
 	
 	TFHppleElement *info = [ps objectAtIndex:2];
-	NSString *companyName = [info text];
-	companyName = [companyName substringToIndex:companyName.length - 3];
-	[dic setValue:companyName forKey:@"companyName"];
+//	NSString *companyName = [info text];
+//	companyName = [companyName substringToIndex:companyName.length - 3];
+//	[dic setValue:companyName forKey:@"companyName"];
 	NSArray *strongs = [info childrenWithTagName:@"strong"];
 	NSString *nu = [[strongs firstObject] text];
 	[dic setValue:nu forKey:@"nu"];
