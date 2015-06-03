@@ -18,11 +18,16 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+	
+	if ([[NSUserDefaults standardUserDefaults] objectForKey:@"order"] == nil) {
+		[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"order"];
+		[[NSUserDefaults standardUserDefaults] synchronize];
+	}
+	
 	_window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 	TabBarController *tabBarController = [[TabBarController alloc] init];
 	[_window setRootViewController:tabBarController];
 	[_window makeKeyAndVisible];
-	
 	[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     return YES;
 }
