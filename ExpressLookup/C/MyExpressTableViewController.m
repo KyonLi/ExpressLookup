@@ -9,7 +9,8 @@
 #import "MyExpressTableViewController.h"
 #import "ResultTableViewCell.h"
 #import "Express.h"
-#import "SearchHistory.h"
+#import "Singleton.h"
+#import "ResultTableViewController.h"
 
 @interface MyExpressTableViewController ()
 {
@@ -25,11 +26,13 @@
 	
 	UINib *nib = [UINib nibWithNibName:@"ExpressInfoTableViewCell" bundle:nil];
 	[[self tableView] registerNib:nib forCellReuseIdentifier:@"HistoryCell"];
+	
+	[[self tableView] setTableFooterView:[UIView new]];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
-	_historyArray = [[SearchHistory sharedInstance] getHistoryRecord];
+	_historyArray = [[Singleton sharedInstance] getHistoryRecords];
 	[[self tableView] reloadData];
 }
 
@@ -54,6 +57,10 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 	return 80;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	
 }
 
 @end

@@ -45,6 +45,7 @@
 		B79B01471B1EC7DC005B8407 /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B79B01461B1EC7DC005B8407 /* libxml2.2.dylib */; };
 		B79B014A1B1EC8FD005B8407 /* Help.m in Sources */ = {isa = PBXBuildFile; fileRef = B79B01491B1EC8FD005B8407 /* Help.m */; };
 		B79B017E1B1F1282005B8407 /* companyArrayHtmlOnly.txt in Resources */ = {isa = PBXBuildFile; fileRef = B79B017D1B1F1282005B8407 /* companyArrayHtmlOnly.txt */; };
+		B79B01811B1F17AB005B8407 /* Singleton.m in Sources */ = {isa = PBXBuildFile; fileRef = B79B01801B1F17AB005B8407 /* Singleton.m */; };
 		B7F35A411B1D4DFD001E2488 /* ResultTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F35A401B1D4DFD001E2488 /* ResultTableViewController.m */; };
 		B7F35A491B1D5074001E2488 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F35A441B1D5074001E2488 /* SVIndefiniteAnimatedView.m */; };
 		B7F35A4A1B1D5074001E2488 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B7F35A461B1D5074001E2488 /* SVProgressHUD.bundle */; };
@@ -55,7 +56,6 @@
 		B7F35A941B1D63B7001E2488 /* ExpressDataTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7F35A931B1D63B7001E2488 /* ExpressDataTableViewCell.xib */; };
 		B7F35ADA1B1DB388001E2488 /* companyDic.txt in Resources */ = {isa = PBXBuildFile; fileRef = B7F35AD91B1DB388001E2488 /* companyDic.txt */; };
 		B7F35ADD1B1DC64F001E2488 /* MyExpressTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F35ADC1B1DC64F001E2488 /* MyExpressTableViewController.m */; };
-		B7F35AE31B1DCBE7001E2488 /* SearchHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F35AE21B1DCBE7001E2488 /* SearchHistory.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -132,6 +132,8 @@
 		B79B01481B1EC8FD005B8407 /* Help.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Help.h; sourceTree = "<group>"; };
 		B79B01491B1EC8FD005B8407 /* Help.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Help.m; sourceTree = "<group>"; };
 		B79B017D1B1F1282005B8407 /* companyArrayHtmlOnly.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = companyArrayHtmlOnly.txt; sourceTree = "<group>"; };
+		B79B017F1B1F17AB005B8407 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
+		B79B01801B1F17AB005B8407 /* Singleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Singleton.m; sourceTree = "<group>"; };
 		B7F35A3F1B1D4DFD001E2488 /* ResultTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultTableViewController.h; sourceTree = "<group>"; };
 		B7F35A401B1D4DFD001E2488 /* ResultTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultTableViewController.m; sourceTree = "<group>"; };
 		B7F35A431B1D5074001E2488 /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
@@ -150,8 +152,6 @@
 		B7F35AD91B1DB388001E2488 /* companyDic.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = companyDic.txt; sourceTree = "<group>"; };
 		B7F35ADB1B1DC64F001E2488 /* MyExpressTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyExpressTableViewController.h; sourceTree = "<group>"; };
 		B7F35ADC1B1DC64F001E2488 /* MyExpressTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyExpressTableViewController.m; sourceTree = "<group>"; };
-		B7F35AE11B1DCBE7001E2488 /* SearchHistory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchHistory.h; sourceTree = "<group>"; };
-		B7F35AE21B1DCBE7001E2488 /* SearchHistory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchHistory.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -273,12 +273,12 @@
 		B77A260E1B1C04B000950D29 /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				B7F35AE11B1DCBE7001E2488 /* SearchHistory.h */,
-				B7F35AE21B1DCBE7001E2488 /* SearchHistory.m */,
 				B79B01481B1EC8FD005B8407 /* Help.h */,
 				B79B01491B1EC8FD005B8407 /* Help.m */,
 				B77A27781B1C593F00950D29 /* Macro.h */,
 				B7F35A951B1D6940001E2488 /* PrefixHeader.pch */,
+				B79B017F1B1F17AB005B8407 /* Singleton.h */,
+				B79B01801B1F17AB005B8407 /* Singleton.m */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -486,6 +486,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B79B01811B1F17AB005B8407 /* Singleton.m in Sources */,
 				B77A26B11B1C22BB00950D29 /* AFHTTPRequestOperation.m in Sources */,
 				B7F35A411B1D4DFD001E2488 /* ResultTableViewController.m in Sources */,
 				B77A26BE1B1C22BB00950D29 /* UIImageView+AFNetworking.m in Sources */,
@@ -520,7 +521,6 @@
 				B77A26B91B1C22BB00950D29 /* AFURLSessionManager.m in Sources */,
 				B77A277E1B1C5C3600950D29 /* TabBarController.m in Sources */,
 				B77A26CA1B1C26E200950D29 /* Express.m in Sources */,
-				B7F35AE31B1DCBE7001E2488 /* SearchHistory.m in Sources */,
 				B7F35A4B1B1D5074001E2488 /* SVProgressHUD.m in Sources */,
 				B7F35ADD1B1DC64F001E2488 /* MyExpressTableViewController.m in Sources */,
 				B77A25E61B1BFFBA00950D29 /* main.m in Sources */,

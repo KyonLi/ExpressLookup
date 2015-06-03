@@ -1,17 +1,20 @@
 //
-//  SearchHistory.m
+//  Singleton.m
 //  ExpressLookup
 //
-//  Created by Kyon on 15/6/2.
+//  Created by Kyon on 15/6/3.
 //  Copyright (c) 2015年 Kyon Li. All rights reserved.
 //
 
-#import "SearchHistory.h"
+#import "Singleton.h"
 #import "Express.h"
 
-@implementation SearchHistory
+@implementation Singleton
+{
+	NSMutableArray *_historyArray;
+}
 
-static SearchHistory *SINGLETON = nil;
+static Singleton *SINGLETON = nil;
 
 static bool isFirstAccess = YES;
 
@@ -22,7 +25,7 @@ static bool isFirstAccess = YES;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         isFirstAccess = NO;
-        SINGLETON = [[super allocWithZone:NULL] init];
+        SINGLETON = [[super allocWithZone:NULL] init];    
     });
     
     return SINGLETON;
@@ -47,12 +50,12 @@ static bool isFirstAccess = YES;
 
 - (id)copy
 {
-    return [[SearchHistory alloc] init];
+    return [[Singleton alloc] init];
 }
 
 - (id)mutableCopy
 {
-    return [[SearchHistory alloc] init];
+    return [[Singleton alloc] init];
 }
 
 - (id) init
@@ -79,7 +82,7 @@ static bool isFirstAccess = YES;
 	[_historyArray addObject:express];
 }
 
-- (NSArray *)getHistoryRecord {
+- (NSArray *)getHistoryRecords {
 	return [NSArray arrayWithArray:_historyArray];
 }
 

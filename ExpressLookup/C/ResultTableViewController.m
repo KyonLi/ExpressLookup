@@ -12,7 +12,7 @@
 #import "Express.h"
 #import "ExpressData.h"
 #import "ResultTableViewCell.h"
-#import "SearchHistory.h"
+#import "Singleton.h"
 
 @interface ResultTableViewController ()
 {
@@ -55,7 +55,7 @@
 				[_express setCompanyName:_company];
 				_dataArray = [data expressData];
 				if ([data.status isEqualToString:@"1"]) {
-					[[SearchHistory sharedInstance] addHistoryRecord:_express];
+					[[Singleton sharedInstance] addHistoryRecord:_express];
 				}
 				[[self tableView] reloadData];
 				[MBProgressHUD hideHUDForView:self.tableView animated:YES];
@@ -70,7 +70,7 @@
 			[_express setCompanyName:_company];
 			_dataArray = [data expressData];
 			if ([data.status isEqualToString:@"1"]) {
-				[[SearchHistory sharedInstance] addHistoryRecord:_express];
+				[[Singleton sharedInstance] addHistoryRecord:_express];
 			}
 			[[self tableView] reloadData];
 			[MBProgressHUD hideHUDForView:self.tableView animated:YES];
