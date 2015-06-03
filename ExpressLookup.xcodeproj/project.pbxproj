@@ -39,6 +39,12 @@
 		B77A278D1B1C5E5C00950D29 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B77A278B1B1C5E5C00950D29 /* SettingsViewController.xib */; };
 		B77A27911B1C6ABE00950D29 /* MXPullDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = B77A27901B1C6ABE00950D29 /* MXPullDownMenu.m */; };
 		B77A27941B1C7E4900950D29 /* companyArray.txt in Resources */ = {isa = PBXBuildFile; fileRef = B77A27931B1C7E4900950D29 /* companyArray.txt */; };
+		B79B01431B1EC78E005B8407 /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = B79B013E1B1EC78E005B8407 /* TFHpple.m */; };
+		B79B01441B1EC78E005B8407 /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = B79B01401B1EC78E005B8407 /* TFHppleElement.m */; };
+		B79B01451B1EC78E005B8407 /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = B79B01421B1EC78E005B8407 /* XPathQuery.m */; };
+		B79B01471B1EC7DC005B8407 /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B79B01461B1EC7DC005B8407 /* libxml2.2.dylib */; };
+		B79B014A1B1EC8FD005B8407 /* Help.m in Sources */ = {isa = PBXBuildFile; fileRef = B79B01491B1EC8FD005B8407 /* Help.m */; };
+		B79B017E1B1F1282005B8407 /* companyArrayHtmlOnly.txt in Resources */ = {isa = PBXBuildFile; fileRef = B79B017D1B1F1282005B8407 /* companyArrayHtmlOnly.txt */; };
 		B7F35A411B1D4DFD001E2488 /* ResultTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F35A401B1D4DFD001E2488 /* ResultTableViewController.m */; };
 		B7F35A491B1D5074001E2488 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F35A441B1D5074001E2488 /* SVIndefiniteAnimatedView.m */; };
 		B7F35A4A1B1D5074001E2488 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B7F35A461B1D5074001E2488 /* SVProgressHUD.bundle */; };
@@ -116,6 +122,16 @@
 		B77A278F1B1C6ABE00950D29 /* MXPullDownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXPullDownMenu.h; sourceTree = "<group>"; };
 		B77A27901B1C6ABE00950D29 /* MXPullDownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXPullDownMenu.m; sourceTree = "<group>"; };
 		B77A27931B1C7E4900950D29 /* companyArray.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = companyArray.txt; sourceTree = "<group>"; };
+		B79B013D1B1EC78E005B8407 /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHpple.h; sourceTree = "<group>"; };
+		B79B013E1B1EC78E005B8407 /* TFHpple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHpple.m; sourceTree = "<group>"; };
+		B79B013F1B1EC78E005B8407 /* TFHppleElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHppleElement.h; sourceTree = "<group>"; };
+		B79B01401B1EC78E005B8407 /* TFHppleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHppleElement.m; sourceTree = "<group>"; };
+		B79B01411B1EC78E005B8407 /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
+		B79B01421B1EC78E005B8407 /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
+		B79B01461B1EC7DC005B8407 /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
+		B79B01481B1EC8FD005B8407 /* Help.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Help.h; sourceTree = "<group>"; };
+		B79B01491B1EC8FD005B8407 /* Help.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Help.m; sourceTree = "<group>"; };
+		B79B017D1B1F1282005B8407 /* companyArrayHtmlOnly.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = companyArrayHtmlOnly.txt; sourceTree = "<group>"; };
 		B7F35A3F1B1D4DFD001E2488 /* ResultTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultTableViewController.h; sourceTree = "<group>"; };
 		B7F35A401B1D4DFD001E2488 /* ResultTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultTableViewController.m; sourceTree = "<group>"; };
 		B7F35A431B1D5074001E2488 /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
@@ -143,6 +159,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B79B01471B1EC7DC005B8407 /* libxml2.2.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,6 +169,7 @@
 		B77A25D71B1BFFB900950D29 = {
 			isa = PBXGroup;
 			children = (
+				B79B01461B1EC7DC005B8407 /* libxml2.2.dylib */,
 				B77A25E21B1BFFBA00950D29 /* ExpressLookup */,
 				B77A25E11B1BFFBA00950D29 /* Products */,
 			);
@@ -257,6 +275,8 @@
 			children = (
 				B7F35AE11B1DCBE7001E2488 /* SearchHistory.h */,
 				B7F35AE21B1DCBE7001E2488 /* SearchHistory.m */,
+				B79B01481B1EC8FD005B8407 /* Help.h */,
+				B79B01491B1EC8FD005B8407 /* Help.m */,
 				B77A27781B1C593F00950D29 /* Macro.h */,
 				B7F35A951B1D6940001E2488 /* PrefixHeader.pch */,
 			);
@@ -277,6 +297,7 @@
 		B77A26101B1C04B000950D29 /* Vender */ = {
 			isa = PBXGroup;
 			children = (
+				B79B013C1B1EC78E005B8407 /* Hpple */,
 				B7F35A511B1D54A3001E2488 /* MBProgressHUD */,
 				B7F35A421B1D5074001E2488 /* SVProgressHUD */,
 				B77A278E1B1C6ABE00950D29 /* MXPullDownMenu */,
@@ -348,8 +369,22 @@
 			children = (
 				B7F35AD91B1DB388001E2488 /* companyDic.txt */,
 				B77A27931B1C7E4900950D29 /* companyArray.txt */,
+				B79B017D1B1F1282005B8407 /* companyArrayHtmlOnly.txt */,
 			);
 			path = Files;
+			sourceTree = "<group>";
+		};
+		B79B013C1B1EC78E005B8407 /* Hpple */ = {
+			isa = PBXGroup;
+			children = (
+				B79B013D1B1EC78E005B8407 /* TFHpple.h */,
+				B79B013E1B1EC78E005B8407 /* TFHpple.m */,
+				B79B013F1B1EC78E005B8407 /* TFHppleElement.h */,
+				B79B01401B1EC78E005B8407 /* TFHppleElement.m */,
+				B79B01411B1EC78E005B8407 /* XPathQuery.h */,
+				B79B01421B1EC78E005B8407 /* XPathQuery.m */,
+			);
+			path = Hpple;
 			sourceTree = "<group>";
 		};
 		B7F35A421B1D5074001E2488 /* SVProgressHUD */ = {
@@ -432,6 +467,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7F35A4A1B1D5074001E2488 /* SVProgressHUD.bundle in Resources */,
+				B79B017E1B1F1282005B8407 /* companyArrayHtmlOnly.txt in Resources */,
 				B7F35A941B1D63B7001E2488 /* ExpressDataTableViewCell.xib in Resources */,
 				B77A27941B1C7E4900950D29 /* companyArray.txt in Resources */,
 				B7F35A501B1D511E001E2488 /* ExpressInfoTableViewCell.xib in Resources */,
@@ -458,8 +494,10 @@
 				B77A278C1B1C5E5C00950D29 /* SettingsViewController.m in Sources */,
 				B7F35A491B1D5074001E2488 /* SVIndefiniteAnimatedView.m in Sources */,
 				B77A26CD1B1C275100950D29 /* ExpressData.m in Sources */,
+				B79B01451B1EC78E005B8407 /* XPathQuery.m in Sources */,
 				B77A27871B1C5E4B00950D29 /* LookupViewController.m in Sources */,
 				B77A26BF1B1C22BB00950D29 /* UIProgressView+AFNetworking.m in Sources */,
+				B79B01431B1EC78E005B8407 /* TFHpple.m in Sources */,
 				B77A26B41B1C22BB00950D29 /* AFNetworkReachabilityManager.m in Sources */,
 				B77A26B81B1C22BB00950D29 /* AFURLResponseSerialization.m in Sources */,
 				B77A26B61B1C22BB00950D29 /* AFURLConnectionOperation.m in Sources */,
@@ -470,9 +508,11 @@
 				B77A27911B1C6ABE00950D29 /* MXPullDownMenu.m in Sources */,
 				B77A26C11B1C22BB00950D29 /* UIWebView+AFNetworking.m in Sources */,
 				B7F35A4F1B1D511E001E2488 /* ResultTableViewCell.m in Sources */,
+				B79B014A1B1EC8FD005B8407 /* Help.m in Sources */,
 				B77A26C71B1C246000950D29 /* DownloadData.m in Sources */,
 				B77A26C41B1C22E100950D29 /* AFAppDotNetAPIClient.m in Sources */,
 				B77A26B31B1C22BB00950D29 /* AFHTTPSessionManager.m in Sources */,
+				B79B01441B1EC78E005B8407 /* TFHppleElement.m in Sources */,
 				B77A26BC1B1C22BB00950D29 /* UIAlertView+AFNetworking.m in Sources */,
 				B77A26B71B1C22BB00950D29 /* AFURLRequestSerialization.m in Sources */,
 				B77A26BA1B1C22BB00950D29 /* AFNetworkActivityIndicatorManager.m in Sources */,
@@ -586,6 +626,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ExpressLookup/Util/PrefixHeader.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/include/libxml2,
+				);
 				INFOPLIST_FILE = ExpressLookup/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -597,6 +642,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ExpressLookup/Util/PrefixHeader.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/include/libxml2,
+				);
 				INFOPLIST_FILE = ExpressLookup/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

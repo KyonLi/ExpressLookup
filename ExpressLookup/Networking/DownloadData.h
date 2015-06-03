@@ -10,5 +10,8 @@
 @class Express;
 
 @interface DownloadData : NSObject
+
 + (NSURLSessionDataTask *)getJsonDataWithBlock:(void (^)(Express *data, NSError *error))block andExpressNumber:(NSString *)nu andCompany:(NSString *)com;
++ (NSURLSessionDataTask *)getHtmlDataWithBlock:(void (^)(Express *data, NSError *error))block andExpressNumber:(NSString *)nu andCompany:(NSString *)com;
+
 @end

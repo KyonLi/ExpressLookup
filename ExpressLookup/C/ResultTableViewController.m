@@ -19,8 +19,10 @@
 	NSString *_expressNumber;
 	NSString *_company;
 	NSDictionary *_companyDic;
+	NSArray *_companyArray;
 	Express *_express;
 	NSArray *_dataArray;
+	BOOL _isHtmlOnly;
 }
 @end
 
@@ -30,8 +32,11 @@
 	if (self = [super init]) {
 		_expressNumber = nu;
 		_company = com;
+		_isHtmlOnly = NO;
 		NSString *dicPath = [[NSBundle mainBundle] pathForResource:@"companyDic" ofType:@"txt"];
 		_companyDic = [NSDictionary dictionaryWithContentsOfFile:dicPath];
+		NSString *arrayPath = [[NSBundle mainBundle] pathForResource:@"companyArrayHtmlOnly" ofType:@"txt"];
+		_companyArray = [NSArray arrayWithContentsOfFile:arrayPath];
 	}
 	return self;
 }
@@ -43,16 +48,34 @@
 	MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.tableView animated:YES];
 	[hud setLabelText:@"查询中，请稍候..."];
 	
-	[DownloadData getJsonDataWithBlock:^(Express *data, NSError *error) {
-		_express = data;
-		[_express setCompanyName:_company];
-		_dataArray = [data expressData];
-		if ([data.status isEqualToString:@"1"]) {
-			[[SearchHistory sharedInstance] addHistoryRecord:_express];
+	for (NSString *com in _companyArray) {
+		if ([com isEqualToString:_company]) {
+			[DownloadData getHtmlDataWithBlock:^(Express *data, NSError *error) {
+				_express = data;
+				[_express setCompanyName:_company];
+				_dataArray = [data expressData];
+				if ([data.status isEqualToString:@"1"]) {
+					[[SearchHistory sharedInstance] addHistoryRecord:_express];
+				}
+				[[self tableView] reloadData];
+				[MBProgressHUD hideHUDForView:self.tableView animated:YES];
+			} andExpressNumber:_expressNumber andCompany:_companyDic[_company]];
+			_isHtmlOnly = YES;
+			break;
 		}
-		[[self tableView] reloadData];
-		[MBProgressHUD hideHUDForView:self.tableView animated:YES];
-	} andExpressNumber:_expressNumber andCompany:_companyDic[_company]];
+	}
+	if (!_isHtmlOnly) {
+		[DownloadData getJsonDataWithBlock:^(Express *data, NSError *error) {
+			_express = data;
+			[_express setCompanyName:_company];
+			_dataArray = [data expressData];
+			if ([data.status isEqualToString:@"1"]) {
+				[[SearchHistory sharedInstance] addHistoryRecord:_express];
+			}
+			[[self tableView] reloadData];
+			[MBProgressHUD hideHUDForView:self.tableView animated:YES];
+		} andExpressNumber:_expressNumber andCompany:_companyDic[_company]];
+	}
 	
 	UINib *infoNib = [UINib nibWithNibName:@"ExpressInfoTableViewCell" bundle:nil];
 	[[self tableView] registerNib:infoNib forCellReuseIdentifier:@"InfoCell"];

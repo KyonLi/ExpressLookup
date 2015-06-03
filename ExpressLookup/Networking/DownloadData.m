@@ -10,6 +10,7 @@
 #import "AFAppDotNetAPIClient.h"
 #import "Express.h"
 #import "Macro.h"
+#import "Help.h"
 
 @implementation DownloadData
 
@@ -27,6 +28,22 @@
             block (express, error);
         }
     }];
+}
+
++ (NSURLSessionDataTask *)getHtmlDataWithBlock:(void (^)(Express *data, NSError *error))block andExpressNumber:(NSString *)nu andCompany:(NSString *)com{
+	return [[AFAppDotNetAPIClient sharedClient] GET:[NSString stringWithFormat:@"http://wap.kuaidi100.com/wap_result.jsp?rand=20120517&id=%@&fromWeb=null&&postid=%@", com, nu] parameters:nil success:^(NSURLSessionDataTask *task, NSData *data) {
+		NSDictionary *dic = [Help htmlToDictionary:data Company:com];
+		Express *express = [[Express alloc] initWithDic:dic];
+		if (block) {
+			block (express, nil);
+		}
+	} failure:^(NSURLSessionDataTask *task, NSError *error) {
+		NSLog(@"failed");
+		Express *express = [Express new];
+		if (block) {
+			block (express, error);
+		}
+	}];
 }
 
 @end

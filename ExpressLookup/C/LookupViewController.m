@@ -9,6 +9,7 @@
 #import "LookupViewController.h"
 #import "MXPullDownMenu.h"
 #import "ResultTableViewController.h"
+#import "DownloadData.h"
 
 @interface LookupViewController () <MXPullDownMenuDelegate>
 {
