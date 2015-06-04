@@ -8,7 +8,6 @@
 
 #import "AppDelegate.h"
 #include "TabBarController.h"
-#import "Singleton.h"
 
 @interface AppDelegate ()
 
@@ -22,6 +21,7 @@
 	
 	if ([[NSUserDefaults standardUserDefaults] objectForKey:@"order"] == nil) {
 		NSLog(@"%s", __func__);
+		NSLog(@"初始化偏好设置");
 		[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"order"];
 		[[NSUserDefaults standardUserDefaults] synchronize];
 	}
