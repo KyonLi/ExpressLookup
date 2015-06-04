@@ -50,6 +50,9 @@
 		B79B014A1B1EC8FD005B8407 /* Help.m in Sources */ = {isa = PBXBuildFile; fileRef = B79B01491B1EC8FD005B8407 /* Help.m */; };
 		B79B017E1B1F1282005B8407 /* companyArrayHtmlOnly.txt in Resources */ = {isa = PBXBuildFile; fileRef = B79B017D1B1F1282005B8407 /* companyArrayHtmlOnly.txt */; };
 		B79B01811B1F17AB005B8407 /* Singleton.m in Sources */ = {isa = PBXBuildFile; fileRef = B79B01801B1F17AB005B8407 /* Singleton.m */; };
+		B7B5B1E41B206E8500690F7B /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B7B5B1DF1B206E8500690F7B /* FontAwesome.ttf */; };
+		B7B5B1E51B206E8500690F7B /* NSString+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B5B1E11B206E8500690F7B /* NSString+FontAwesome.m */; };
+		B7B5B1E61B206E8500690F7B /* UIButton+Bootstrap.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B5B1E31B206E8500690F7B /* UIButton+Bootstrap.m */; };
 		B7F35A411B1D4DFD001E2488 /* ResultTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F35A401B1D4DFD001E2488 /* ResultTableViewController.m */; };
 		B7F35A4F1B1D511E001E2488 /* ResultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F35A4D1B1D511E001E2488 /* ResultTableViewCell.m */; };
 		B7F35A501B1D511E001E2488 /* ExpressInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7F35A4E1B1D511E001E2488 /* ExpressInfoTableViewCell.xib */; };
@@ -142,6 +145,11 @@
 		B79B017D1B1F1282005B8407 /* companyArrayHtmlOnly.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = companyArrayHtmlOnly.txt; sourceTree = "<group>"; };
 		B79B017F1B1F17AB005B8407 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
 		B79B01801B1F17AB005B8407 /* Singleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Singleton.m; sourceTree = "<group>"; };
+		B7B5B1DF1B206E8500690F7B /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
+		B7B5B1E01B206E8500690F7B /* NSString+FontAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FontAwesome.h"; sourceTree = "<group>"; };
+		B7B5B1E11B206E8500690F7B /* NSString+FontAwesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FontAwesome.m"; sourceTree = "<group>"; };
+		B7B5B1E21B206E8500690F7B /* UIButton+Bootstrap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Bootstrap.h"; sourceTree = "<group>"; };
+		B7B5B1E31B206E8500690F7B /* UIButton+Bootstrap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Bootstrap.m"; sourceTree = "<group>"; };
 		B7F35A3F1B1D4DFD001E2488 /* ResultTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultTableViewController.h; sourceTree = "<group>"; };
 		B7F35A401B1D4DFD001E2488 /* ResultTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultTableViewController.m; sourceTree = "<group>"; };
 		B7F35A4C1B1D511E001E2488 /* ResultTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultTableViewCell.h; sourceTree = "<group>"; };
@@ -169,6 +177,7 @@
 		B74200691B2066840036DB38 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				B7B5B1DE1B206E8500690F7B /* StrapButton */,
 				B742006A1B2066840036DB38 /* Hpple */,
 				B74200711B2066840036DB38 /* MBProgressHUD */,
 				B74200741B2066840036DB38 /* MXPullDownMenu */,
@@ -409,6 +418,18 @@
 			path = Files;
 			sourceTree = "<group>";
 		};
+		B7B5B1DE1B206E8500690F7B /* StrapButton */ = {
+			isa = PBXGroup;
+			children = (
+				B7B5B1DF1B206E8500690F7B /* FontAwesome.ttf */,
+				B7B5B1E01B206E8500690F7B /* NSString+FontAwesome.h */,
+				B7B5B1E11B206E8500690F7B /* NSString+FontAwesome.m */,
+				B7B5B1E21B206E8500690F7B /* UIButton+Bootstrap.h */,
+				B7B5B1E31B206E8500690F7B /* UIButton+Bootstrap.m */,
+			);
+			path = StrapButton;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -467,6 +488,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B79B017E1B1F1282005B8407 /* companyArrayHtmlOnly.txt in Resources */,
+				B7B5B1E41B206E8500690F7B /* FontAwesome.ttf in Resources */,
 				B7F35A941B1D63B7001E2488 /* ExpressDataTableViewCell.xib in Resources */,
 				B77A27941B1C7E4900950D29 /* companyArray.txt in Resources */,
 				B7F35A501B1D511E001E2488 /* ExpressInfoTableViewCell.xib in Resources */,
@@ -488,6 +510,7 @@
 			files = (
 				B79B01811B1F17AB005B8407 /* Singleton.m in Sources */,
 				B77A26B11B1C22BB00950D29 /* AFHTTPRequestOperation.m in Sources */,
+				B7B5B1E61B206E8500690F7B /* UIButton+Bootstrap.m in Sources */,
 				B7F35A411B1D4DFD001E2488 /* ResultTableViewController.m in Sources */,
 				B77A26BE1B1C22BB00950D29 /* UIImageView+AFNetworking.m in Sources */,
 				B77A26B21B1C22BB00950D29 /* AFHTTPRequestOperationManager.m in Sources */,
@@ -518,6 +541,7 @@
 				B74200811B2066840036DB38 /* MBProgressHUD.m in Sources */,
 				B77A26BA1B1C22BB00950D29 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				B77A277B1B1C5BD000950D29 /* AppDelegate.m in Sources */,
+				B7B5B1E51B206E8500690F7B /* NSString+FontAwesome.m in Sources */,
 				B77A26B91B1C22BB00950D29 /* AFURLSessionManager.m in Sources */,
 				B77A277E1B1C5C3600950D29 /* TabBarController.m in Sources */,
 				B77A26CA1B1C26E200950D29 /* Express.m in Sources */,

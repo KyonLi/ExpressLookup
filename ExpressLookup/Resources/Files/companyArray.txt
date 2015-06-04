@@ -3,7 +3,6 @@
  "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <array>
-    <string>请选择快递公司</string>
     <string>安信达</string>
     <string>百世汇通</string>
     <string>百福东方</string>

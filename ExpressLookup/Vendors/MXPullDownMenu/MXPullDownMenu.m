@@ -41,14 +41,14 @@
     return self;
 }
 
-- (MXPullDownMenu *)initWithArray:(NSArray *)array selectedColor:(UIColor *)color
+- (MXPullDownMenu *)initWithArray:(NSArray *)array selectedColor:(UIColor *)color frame:(CGRect)frame
 {
     self = [super init];
     if (self) {
         
-        self.frame = CGRectMake(0, 0, 320, 36);
-        
-        _menuColor = [UIColor colorWithRed:164.0/255.0 green:166.0/255.0 blue:169.0/255.0 alpha:1.0];
+		[self setFrame:frame];
+		
+//        _menuColor = [UIColor colorWithRed:164.0/255.0 green:166.0/255.0 blue:169.0/255.0 alpha:1.0];
 		_menuColor = [UIColor blackColor];
         
         _array = array;
@@ -64,7 +64,7 @@
         for (int i = 0; i < _numOfMenu; i++) {
             
             CGPoint position = CGPointMake( (i * 2 + 1) * textLayerInterval , self.frame.size.height / 2);
-            CATextLayer *title = [self creatTextLayerWithNSString:_array[i][0] withColor:_menuColor andPosition:position];
+            CATextLayer *title = [self creatTextLayerWithNSString:@"请选择快递公司" withColor:_menuColor andPosition:position];
             [self.layer addSublayer:title];
             [_titles addObject:title];
             
@@ -80,7 +80,7 @@
             }
             
         }
-        _tableView = [self creatTableViewAtPosition:CGPointMake(0, self.frame.origin.y + self.frame.size.height)];
+        _tableView = [self creatTableViewAtPosition:CGPointMake(frame.origin.x, frame.origin.y + frame.size.height) width:self.frame.size.width];
         _tableView.tintColor = color;
         _tableView.dataSource = self;
         _tableView.delegate = self;
@@ -264,20 +264,20 @@
     if (show) {
         
         
-        tableView.frame = CGRectMake(0, self.frame.origin.y + self.frame.size.height, self.frame.size.width, 0);
+        tableView.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y + self.frame.size.height, self.frame.size.width, 0);
         [self.superview addSubview:tableView];
         
         
-        CGFloat tableViewHeight = ([tableView numberOfRowsInSection:0] > 5) ? (5 * tableView.rowHeight) : ([tableView numberOfRowsInSection:0] * tableView.rowHeight);
+        CGFloat tableViewHeight = ([tableView numberOfRowsInSection:0] > 10) ? (10 * tableView.rowHeight) : ([tableView numberOfRowsInSection:0] * tableView.rowHeight);
         
         [UIView animateWithDuration:0.2 animations:^{
-            _tableView.frame = CGRectMake(0, self.frame.origin.y + self.frame.size.height, self.frame.size.width, tableViewHeight);
+            _tableView.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y + self.frame.size.height, self.frame.size.width, tableViewHeight);
         }];
 
     } else {
         
         [UIView animateWithDuration:0.2 animations:^{
-            _tableView.frame = CGRectMake(0, self.frame.origin.y + self.frame.size.height, self.frame.size.width, 0);
+            _tableView.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y + self.frame.size.height, self.frame.size.width, 0);
         } completion:^(BOOL finished) {
             [tableView removeFromSuperview];
         }];
@@ -384,10 +384,9 @@
 }
 
 
-- (UITableView *)creatTableViewAtPosition:(CGPoint)point
+- (UITableView *)creatTableViewAtPosition:(CGPoint)point width:(CGFloat)width
 {
     UITableView *tableView = [UITableView new];
-    
     tableView.frame = CGRectMake(point.x, point.y, self.frame.size.width, 0);
     tableView.rowHeight = 36;
     

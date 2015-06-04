@@ -10,6 +10,7 @@
 #import "MXPullDownMenu.h"
 #import "ResultTableViewController.h"
 #import "DownloadData.h"
+#import "UIButton+Bootstrap.h"
 
 @interface LookupViewController () <MXPullDownMenuDelegate>
 {
@@ -17,6 +18,7 @@
 }
 @property (weak, nonatomic) IBOutlet UIView *companyView;
 @property (weak, nonatomic) IBOutlet UITextField *textField;
+@property (weak, nonatomic) IBOutlet UIButton *searchButton;
 
 @end
 
@@ -24,9 +26,9 @@
 
 - (void)viewDidAppear:(BOOL)animated {
 	[super viewDidAppear:animated];
-	MXPullDownMenu *menu = [[MXPullDownMenu alloc] initWithArray:@[[[Singleton sharedInstance] getCompanyNameArray]] selectedColor:[UIColor blueColor]];
+	MXPullDownMenu *menu = [[MXPullDownMenu alloc] initWithArray:@[[[Singleton sharedInstance] getCompanyNameArray]] selectedColor:[UIColor blackColor] frame:_companyView.frame];
 	[menu setDelegate:self];
-	[menu setFrame:CGRectMake(0, _companyView.frame.origin.y, self.view.frame.size.width, _companyView.frame.size.height)];
+//	[menu setFrame:CGRectMake(0, _companyView.frame.origin.y, self.view.frame.size.width, _companyView.frame.size.height)];
 	[self.view addSubview:menu];
 }
 
@@ -34,6 +36,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 	[[self navigationItem] setTitle:@"查询"];
+	[_searchButton bootstrapStyle];
+	[_searchButton addAwesomeIcon:FAIconSearch beforeTitle:YES];
 }
 
 - (void)PullDownMenu:(MXPullDownMenu *)pullDownMenu didSelectRowAtColumn:(NSInteger)column row:(NSInteger)row {
