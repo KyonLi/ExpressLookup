@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Express : NSObject
+@interface Express : NSObject <NSSecureCoding>
 
 @property (nonatomic, retain, readonly) NSString *nu;
 @property (nonatomic, retain, readonly) NSString *comcontact;

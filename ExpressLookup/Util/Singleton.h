@@ -13,10 +13,12 @@
 
 + (Singleton*)sharedInstance;
 - (void)addHistoryRecord:(Express *)express;
+- (void)removeHistoryRecordAtIndex:(NSInteger)index;
 - (NSArray *)getHistoryRecords;
 - (NSString *)translateCompanyNameIntoCompanyID:(NSString *)companyName;
 - (NSArray *)getCompanyNameArray;
 - (NSArray *)gatHtmlOnlyCompanyNameArray;
 - (BOOL)isHtmlOnly:(NSString *)companyName;
+- (void)archiveHistoryArray;
 
 @end

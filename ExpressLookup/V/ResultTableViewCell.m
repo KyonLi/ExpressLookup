@@ -18,16 +18,7 @@
 }
 
 - (void)refreshCellWithType:(cellType)cellType andData:(ExpressData *)data orExpress:(Express *)express {
-	if (cellType == expressInfo) {
-		UIImageView *imageView = (UIImageView *)[[self contentView] viewWithTag:100];
-		UILabel *label = (UILabel *)[[self contentView] viewWithTag:101];
-		if ([express.status isEqualToString:@"1"]) {
-			[label setText:[NSString stringWithFormat:@"%@ %@", express.companyName, express.nu]];
-		} else {
-			[label setText:[NSString stringWithFormat:@"%@", express.message]];
-		}
-	}
-	else if (cellType == expressData) {
+	if (cellType == expressData) {
 		UILabel *label1 = (UILabel *)[[self contentView] viewWithTag:200];
 		UILabel *label2 = (UILabel *)[[self contentView] viewWithTag:201];
 		UILabel *label3 = (UILabel *)[[self contentView] viewWithTag:202];
@@ -35,6 +26,15 @@
 		[label1 setText:array[0]];
 		[label2 setText:array[1]];
 		[label3 setText:data.context];
+	}
+	else if (cellType == expressInfo) {
+		UIImageView *imageView = (UIImageView *)[[self contentView] viewWithTag:100];
+		UILabel *label = (UILabel *)[[self contentView] viewWithTag:101];
+		if ([express.status isEqualToString:@"1"]) {
+			[label setText:[NSString stringWithFormat:@"%@ %@", express.companyName, express.nu]];
+		} else {
+			[label setText:[NSString stringWithFormat:@"%@", express.message]];
+		}
 	}
 }
 

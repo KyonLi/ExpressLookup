@@ -12,7 +12,7 @@
 
 @property (nonatomic, retain, readonly) NSString *time;
 @property (nonatomic, retain, readonly) NSString *location;
-@property (nonatomic, retain) NSString *context;
+@property (nonatomic, retain, readonly) NSString *context;
 
 - (instancetype)initWithDic:(NSDictionary *)dic;
 
