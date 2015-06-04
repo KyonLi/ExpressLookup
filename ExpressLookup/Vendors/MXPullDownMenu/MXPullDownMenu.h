@@ -33,7 +33,7 @@ BackGroundViewStatus;
 
 @interface MXPullDownMenu : UIView<UITableViewDelegate, UITableViewDataSource>
 
-- (MXPullDownMenu *)initWithArray:(NSArray *)array selectedColor:(UIColor *)color frame:(CGRect)frame;
+- (MXPullDownMenu *)initWithArray:(NSArray *)array selectedColor:(UIColor *)color frame:(CGRect)frame cellNumber:(NSInteger)cellNumber;
 
 @property (nonatomic) id<MXPullDownMenuDelegate> delegate;
 

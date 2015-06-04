@@ -25,6 +25,7 @@
     bool _show;
     
     NSInteger _numOfMenu;
+	NSInteger _cellNumber;
     
     NSArray *_array;
     
@@ -41,7 +42,7 @@
     return self;
 }
 
-- (MXPullDownMenu *)initWithArray:(NSArray *)array selectedColor:(UIColor *)color frame:(CGRect)frame
+- (MXPullDownMenu *)initWithArray:(NSArray *)array selectedColor:(UIColor *)color frame:(CGRect)frame cellNumber:(NSInteger)cellNumber
 {
     self = [super init];
     if (self) {
@@ -50,6 +51,8 @@
 		
 //        _menuColor = [UIColor colorWithRed:164.0/255.0 green:166.0/255.0 blue:169.0/255.0 alpha:1.0];
 		_menuColor = [UIColor blackColor];
+		
+		_cellNumber = cellNumber;
         
         _array = array;
 
@@ -268,7 +271,8 @@
         [self.superview addSubview:tableView];
         
         
-        CGFloat tableViewHeight = ([tableView numberOfRowsInSection:0] > 10) ? (10 * tableView.rowHeight) : ([tableView numberOfRowsInSection:0] * tableView.rowHeight);
+//        CGFloat tableViewHeight = ([tableView numberOfRowsInSection:0] > 10) ? (10 * tableView.rowHeight) : ([tableView numberOfRowsInSection:0] * tableView.rowHeight);
+		CGFloat tableViewHeight = _cellNumber * tableView.rowHeight;
         
         [UIView animateWithDuration:0.2 animations:^{
             _tableView.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y + self.frame.size.height, self.frame.size.width, tableViewHeight);
@@ -308,7 +312,7 @@
     [self animateIndicator:indicator Forward:forward complete:^{
         [self animateTitle:title show:forward complete:^{
             [self animateBackGroundView:background show:forward complete:^{
-                [self animateTableView:tableView show:forward complete:^{
+				[self animateTableView:tableView show:forward complete:^{
                 }];
             }];
         }];
@@ -388,7 +392,7 @@
 {
     UITableView *tableView = [UITableView new];
     tableView.frame = CGRectMake(point.x, point.y, self.frame.size.width, 0);
-    tableView.rowHeight = 36;
+    tableView.rowHeight = 40;
     
     return tableView;
 }

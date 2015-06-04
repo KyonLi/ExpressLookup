@@ -26,9 +26,10 @@
 
 - (void)viewDidAppear:(BOOL)animated {
 	[super viewDidAppear:animated];
-	MXPullDownMenu *menu = [[MXPullDownMenu alloc] initWithArray:@[[[Singleton sharedInstance] getCompanyNameArray]] selectedColor:[UIColor blackColor] frame:_companyView.frame];
+	CGFloat height = self.view.frame.size.height - _companyView.frame.origin.y - 49 - 8 - _companyView.frame.size.height;
+	NSInteger cellNumber = height / 40;
+	MXPullDownMenu *menu = [[MXPullDownMenu alloc] initWithArray:@[[[Singleton sharedInstance] getCompanyNameArray]] selectedColor:[UIColor blackColor] frame:_companyView.frame cellNumber:cellNumber];
 	[menu setDelegate:self];
-//	[menu setFrame:CGRectMake(0, _companyView.frame.origin.y, self.view.frame.size.width, _companyView.frame.size.height)];
 	[self.view addSubview:menu];
 }
 
