@@ -15,6 +15,7 @@
     if (self = [super init]) {
         _expressData = [NSMutableArray new];
         [self setValuesForKeysWithDictionary:dic];
+		_comIcon = [NSString stringWithFormat:@"http://cdn.kuaidi100.com/images/all/56/%@.png", _com];
     }
     return self;
 }
@@ -53,6 +54,7 @@
 	[aCoder encodeObject:_ischeck forKey:@"ischeck"];
 	[aCoder encodeObject:_pickuptime forKey:@"pickuptime"];
 	[aCoder encodeObject:_comurl forKey:@"comurl"];
+	[aCoder encodeObject:_comIcon forKey:@"comIcon"];
 	[aCoder encodeObject:_companyName forKey:@"companyName"];
 }
 
@@ -77,6 +79,7 @@
 		_ischeck = [aDecoder decodeObjectForKey:@"ischeck"];
 		_pickuptime = [aDecoder decodeObjectForKey:@"pickuptime"];
 		_comurl = [aDecoder decodeObjectForKey:@"comurl"];
+		_comIcon = [aDecoder decodeObjectForKey:@"comIcon"];
 		_companyName = [aDecoder decodeObjectForKey:@"companyName"];
 	}
 	return self;

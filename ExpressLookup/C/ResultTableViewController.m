@@ -19,6 +19,7 @@
 	NSString *_company;
 	Express *_express;
 	NSArray *_dataArray;
+	NSInteger _rowNumber;
 }
 @end
 
@@ -50,6 +51,11 @@
 			_express = data;
 			[_express setCompanyName:_company];
 			_dataArray = [data expressData];
+			if (_dataArray.count) {
+				_rowNumber = _dataArray.count + 1;
+			} else {
+				_rowNumber = 0;
+			}
 			if ([data.status isEqualToString:@"1"]) {
 				[[Singleton sharedInstance] addHistoryRecord:_express];
 			}
@@ -61,6 +67,11 @@
 			_express = data;
 			[_express setCompanyName:_company];
 			_dataArray = [data expressData];
+			if (_dataArray.count) {
+				_rowNumber = _dataArray.count + 1;
+			} else {
+				_rowNumber = 0;
+			}
 			if ([data.status isEqualToString:@"1"]) {
 				[[Singleton sharedInstance] addHistoryRecord:_express];
 			}
@@ -86,7 +97,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return _dataArray.count + 1;
+    return _rowNumber;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

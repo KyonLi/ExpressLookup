@@ -9,6 +9,7 @@
 #import "ResultTableViewCell.h"
 #import "ExpressData.h"
 #import "Express.h"
+#import "UIImageView+WebCache.h"
 
 @implementation ResultTableViewCell
 
@@ -29,6 +30,7 @@
 	}
 	else if (cellType == expressInfo) {
 		UIImageView *imageView = (UIImageView *)[[self contentView] viewWithTag:100];
+		[imageView sd_setImageWithURL:[NSURL URLWithString:express.comIcon]];
 		UILabel *label = (UILabel *)[[self contentView] viewWithTag:101];
 		if ([express.status isEqualToString:@"1"]) {
 			[label setText:[NSString stringWithFormat:@"%@ %@", express.companyName, express.nu]];
