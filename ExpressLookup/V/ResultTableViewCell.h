@@ -14,6 +14,6 @@
 
 @property (nonatomic, retain) NSString *type;
 
-- (void)refreshCellWithType:(cellType)cellType andData:(ExpressData *)data orExpress:(Express *)express;
+- (void)refreshCellWithType:(cellType)cellType andData:(ExpressData *)data orExpress:(Express *)express index:(NSInteger)index;
 
 @end

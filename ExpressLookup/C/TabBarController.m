@@ -9,7 +9,7 @@
 #import "TabBarController.h"
 #import "MyExpressTableViewController.h"
 #import "LookupViewController.h"
-#import "SettingsViewController.h"
+#import "SettingsTableViewController.h"
 
 @interface TabBarController ()
 
@@ -32,7 +32,7 @@
 	[[lookupNav tabBarItem] setImage:[UIImage imageNamed:@"195-barcode"]];
 	[[lookupNav tabBarItem] setSelectedImage:[UIImage imageNamed:@"195-barcode"]];
 	
-	SettingsViewController *settingsVC = [[SettingsViewController alloc] init];
+	SettingsTableViewController *settingsVC = [[SettingsTableViewController alloc] init];
 	UINavigationController *settingsNav = [[UINavigationController alloc] initWithRootViewController:settingsVC];
 	[[settingsNav tabBarItem] setTitle:@"设置"];
 	[[settingsNav tabBarItem] setImage:[UIImage imageNamed:@"20-gear-2"]];

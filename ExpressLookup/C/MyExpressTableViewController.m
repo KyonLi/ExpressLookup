@@ -22,6 +22,13 @@
 
 @implementation MyExpressTableViewController
 
+- (instancetype)initWithStyle:(UITableViewStyle)style {
+	if (self = [super initWithStyle:UITableViewStyleGrouped]) {
+		
+	}
+	return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 	[[self navigationItem] setTitle:@"历史记录"];
@@ -32,9 +39,6 @@
 	
 	UINib *nib = [UINib nibWithNibName:@"ExpressInfoTableViewCell" bundle:nil];
 	[[self tableView] registerNib:nib forCellReuseIdentifier:@"HistoryCell"];
-	
-	[[self tableView] setTableFooterView:[UIView new]];
-	[[self view] setBackgroundColor:[UIColor redColor]];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -65,7 +69,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	ResultTableViewCell *cell = [[self tableView] dequeueReusableCellWithIdentifier:@"HistoryCell"];
 	Express *express = _historyArray[indexPath.row];
-	[cell refreshCellWithType:expressInfo andData:nil orExpress:express];
+	[cell refreshCellWithType:expressInfo andData:nil orExpress:express index:indexPath.row];
 	return cell;
 }
 

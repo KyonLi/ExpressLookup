@@ -18,14 +18,23 @@
 	
 }
 
-- (void)refreshCellWithType:(cellType)cellType andData:(ExpressData *)data orExpress:(Express *)express {
+- (void)refreshCellWithType:(cellType)cellType andData:(ExpressData *)data orExpress:(Express *)express index:(NSInteger)index {
 	if (cellType == expressData) {
+		if (index % 2 == 0) {
+			[self setBackgroundColor:[UIColor whiteColor]];
+		} else {
+			[self setBackgroundColor:[UIColor lightGrayColor]];
+		}
 		UILabel *label1 = (UILabel *)[[self contentView] viewWithTag:200];
+		[label1 setAdjustsFontSizeToFitWidth:YES];
 		UILabel *label2 = (UILabel *)[[self contentView] viewWithTag:201];
+		[label2 setAdjustsFontSizeToFitWidth:YES];
 		UILabel *label3 = (UILabel *)[[self contentView] viewWithTag:202];
+		[label3 setAdjustsFontSizeToFitWidth:YES];
 		NSArray *array = [data.time componentsSeparatedByString:@" "];
 		[label1 setText:array[0]];
-		[label2 setText:array[1]];
+		NSString *time = array[1];
+		[label2 setText:[time substringToIndex:5]];
 		[label3 setText:data.context];
 	}
 	else if (cellType == expressInfo) {

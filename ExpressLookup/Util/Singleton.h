@@ -14,6 +14,7 @@
 + (Singleton*)sharedInstance;
 - (void)addHistoryRecord:(Express *)express;
 - (void)removeHistoryRecordAtIndex:(NSInteger)index;
+- (void)removeAllHistoryRecord;
 - (NSArray *)getHistoryRecords;
 - (NSString *)translateCompanyNameIntoCompanyID:(NSString *)companyName;
 - (NSArray *)getCompanyNameArray;

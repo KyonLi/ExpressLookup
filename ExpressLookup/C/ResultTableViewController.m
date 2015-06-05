@@ -46,16 +46,18 @@
 	} else {
 		order = @"asc";
 	}
+	
 	if ([[Singleton sharedInstance] isHtmlOnly:_company]) {
 		[DownloadData getHtmlDataWithBlock:^(Express *data, NSError *error) {
 			_express = data;
 			[_express setCompanyName:_company];
 			_dataArray = [data expressData];
-			if (_dataArray.count) {
-				_rowNumber = _dataArray.count + 1;
-			} else {
-				_rowNumber = 0;
-			}
+//			if (_dataArray.count) {
+//				_rowNumber = _dataArray.count + 1;
+//			} else {
+//				_rowNumber = 0;
+//			}
+			_rowNumber = _dataArray.count + 1;
 			if ([data.status isEqualToString:@"1"]) {
 				[[Singleton sharedInstance] addHistoryRecord:_express];
 			}
@@ -67,11 +69,12 @@
 			_express = data;
 			[_express setCompanyName:_company];
 			_dataArray = [data expressData];
-			if (_dataArray.count) {
-				_rowNumber = _dataArray.count + 1;
-			} else {
-				_rowNumber = 0;
-			}
+//			if (_dataArray.count) {
+//				_rowNumber = _dataArray.count + 1;
+//			} else {
+//				_rowNumber = 0;
+//			}
+			_rowNumber = _dataArray.count + 1;
 			if ([data.status isEqualToString:@"1"]) {
 				[[Singleton sharedInstance] addHistoryRecord:_express];
 			}
@@ -104,11 +107,11 @@
 	ResultTableViewCell *cell = nil;
 	if (indexPath.row == 0) {
 		cell = [[self tableView] dequeueReusableCellWithIdentifier:@"InfoCell"];
-		[cell refreshCellWithType:expressInfo andData:nil orExpress:_express];
+		[cell refreshCellWithType:expressInfo andData:nil orExpress:_express index:indexPath.row];
 	} else {
 		ExpressData *data = _dataArray[indexPath.row - 1];
 		cell = [[self tableView] dequeueReusableCellWithIdentifier:@"DataCell"];
-		[cell refreshCellWithType:expressData andData:data orExpress:nil];
+		[cell refreshCellWithType:expressData andData:data orExpress:nil index:indexPath.row];
 	}
     return cell;
 }

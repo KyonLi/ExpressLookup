@@ -110,6 +110,10 @@ static bool isFirstAccess = YES;
 	[_historyArray removeObjectAtIndex:index];
 }
 
+- (void)removeAllHistoryRecord {
+	[_historyArray removeAllObjects];
+}
+
 - (NSArray *)getHistoryRecords {
 	return [NSArray arrayWithArray:_historyArray];
 }
