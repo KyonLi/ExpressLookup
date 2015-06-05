@@ -34,6 +34,7 @@
 	[[self tableView] registerNib:nib forCellReuseIdentifier:@"HistoryCell"];
 	
 	[[self tableView] setTableFooterView:[UIView new]];
+	[[self view] setBackgroundColor:[UIColor redColor]];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
