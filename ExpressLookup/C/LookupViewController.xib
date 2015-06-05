@@ -18,6 +18,9 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="lookup_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="UcN-tX-0f0">
+                    <rect key="frame" x="0.0" y="73" width="592" height="462"/>
+                </imageView>
                 <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="haX-C6-6TU" userLabel="快递公司">
                     <rect key="frame" x="147" y="124" width="306" height="60"/>
                     <constraints>
@@ -38,8 +41,8 @@
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="数据由 快递100 提供" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pAy-kp-tW0">
                     <rect key="frame" x="203" y="503" width="196" height="21"/>
-                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <fontDescription key="fontDescription" type="italicSystem" pointSize="12"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入快递单号" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5DF-Dn-9dD">
@@ -48,23 +51,30 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.88627450980392153" green="0.88627450980392153" blue="0.88627450980392153" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="5DF-Dn-9dD" firstAttribute="top" secondItem="haX-C6-6TU" secondAttribute="bottom" constant="50" id="063-4c-C1y"/>
-                <constraint firstAttribute="trailing" secondItem="pAy-kp-tW0" secondAttribute="trailing" id="0UC-PS-yCI"/>
+                <constraint firstAttribute="trailing" secondItem="pAy-kp-tW0" secondAttribute="trailing" constant="10" id="0UC-PS-yCI"/>
                 <constraint firstItem="VLo-Ec-HjF" firstAttribute="top" secondItem="5DF-Dn-9dD" secondAttribute="bottom" constant="60" id="120-El-ChK"/>
                 <constraint firstItem="haX-C6-6TU" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="124" id="42w-vZ-VuP"/>
-                <constraint firstItem="VLo-Ec-HjF" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="60" id="9RH-ex-EU5"/>
+                <constraint firstItem="VLo-Ec-HjF" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="80" id="9RH-ex-EU5"/>
+                <constraint firstAttribute="trailing" secondItem="UcN-tX-0f0" secondAttribute="trailing" id="Dfy-wR-HUA"/>
+                <constraint firstAttribute="bottom" secondItem="UcN-tX-0f0" secondAttribute="bottom" constant="55" id="EUJ-1P-DxF"/>
                 <constraint firstItem="VLo-Ec-HjF" firstAttribute="height" secondItem="5DF-Dn-9dD" secondAttribute="height" multiplier="0.75" id="FZd-h0-LDu"/>
+                <constraint firstItem="UcN-tX-0f0" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="IU5-QV-3ku"/>
                 <constraint firstItem="5DF-Dn-9dD" firstAttribute="height" secondItem="haX-C6-6TU" secondAttribute="height" id="K4L-zm-nE3"/>
                 <constraint firstItem="haX-C6-6TU" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="40" id="MvN-QW-vmQ"/>
                 <constraint firstAttribute="trailing" secondItem="haX-C6-6TU" secondAttribute="trailing" constant="40" id="RFa-Y7-gua"/>
-                <constraint firstItem="pAy-kp-tW0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="gZp-Qn-e2J"/>
-                <constraint firstAttribute="trailing" secondItem="VLo-Ec-HjF" secondAttribute="trailing" constant="60" id="iue-az-XHa"/>
+                <constraint firstItem="UcN-tX-0f0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Wnq-Au-2Us"/>
+                <constraint firstItem="pAy-kp-tW0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="gZp-Qn-e2J"/>
+                <constraint firstAttribute="trailing" secondItem="VLo-Ec-HjF" secondAttribute="trailing" constant="80" id="iue-az-XHa"/>
                 <constraint firstItem="5DF-Dn-9dD" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="40" id="mjn-Ng-M5n"/>
                 <constraint firstAttribute="trailing" secondItem="5DF-Dn-9dD" secondAttribute="trailing" constant="40" id="sxm-y8-Ivj"/>
-                <constraint firstAttribute="bottom" secondItem="pAy-kp-tW0" secondAttribute="bottom" constant="55" id="vLL-CZ-b4k"/>
+                <constraint firstAttribute="bottom" secondItem="pAy-kp-tW0" secondAttribute="bottom" constant="75" id="vLL-CZ-b4k"/>
             </constraints>
         </view>
     </objects>
+    <resources>
+        <image name="lookup_background.png" width="637" height="483"/>
+    </resources>
 </document>

@@ -37,7 +37,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 	[[self navigationItem] setTitle:@"查询"];
-	[_searchButton bootstrapStyle];
+//	[_searchButton bootstrapStyle];
 	[_searchButton addAwesomeIcon:FAIconSearch beforeTitle:YES];
 }
 

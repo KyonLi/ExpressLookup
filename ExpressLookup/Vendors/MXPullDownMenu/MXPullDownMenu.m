@@ -50,7 +50,7 @@
 		[self setFrame:frame];
 		
 //        _menuColor = [UIColor colorWithRed:164.0/255.0 green:166.0/255.0 blue:169.0/255.0 alpha:1.0];
-		_menuColor = [UIColor blackColor];
+		_menuColor = [UIColor grayColor];
 		
 		_cellNumber = cellNumber;
         
@@ -89,7 +89,8 @@
         _tableView.delegate = self;
         
         // 设置menu, 并添加手势
-        self.backgroundColor = [UIColor whiteColor];
+//        self.backgroundColor = [UIColor whiteColor];
+		
         UIGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapMenu:)];
         [self addGestureRecognizer:tapGesture];
         
