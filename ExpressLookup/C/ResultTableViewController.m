@@ -13,12 +13,13 @@
 #import "ExpressData.h"
 #import "ResultTableViewCell.h"
 
-@interface ResultTableViewController ()
+@interface ResultTableViewController () <UIAlertViewDelegate>
 @property (nonatomic, retain) NSString *expressNumber;
 @property (nonatomic, retain) NSString *company;
 @property (nonatomic, retain) Express *express;
 @property (nonatomic, retain) NSArray *dataArray;
 @property (nonatomic, assign) NSInteger rowNumber;
+@property (nonatomic, retain) UIAlertView *alertView;
 
 @end
 
@@ -46,14 +47,20 @@
 		order = @"asc";
 	}
 	
+	_alertView = [[UIAlertView alloc] initWithTitle:@"哎呀" message:nil delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
+	[[self tableView] addSubview:_alertView];
+	
 	if ([[Singleton sharedInstance] isHtmlOnly:_company]) {
 		[DownloadData getHtmlDataWithBlock:^(Express *data, NSError *error) {
 			[self setExpress:data];
 			[_express setCompanyName:_company];
 			[self setDataArray:data.expressData];
-			_rowNumber = _dataArray.count + 1;
 			if ([data.status isEqualToString:@"1"]) {
 				[[Singleton sharedInstance] addHistoryRecord:_express];
+				_rowNumber = _dataArray.count + 1;
+			} else {
+				[_alertView setMessage:_express.message];
+				[_alertView show];
 			}
 			[[self tableView] reloadData];
 			[MBProgressHUD hideHUDForView:self.tableView animated:YES];
@@ -63,9 +70,12 @@
 			[self setExpress:data];
 			[_express setCompanyName:_company];
 			[self setDataArray:data.expressData];
-			_rowNumber = _dataArray.count + 1;
 			if ([data.status isEqualToString:@"1"]) {
 				[[Singleton sharedInstance] addHistoryRecord:_express];
+				_rowNumber = _dataArray.count + 1;
+			} else {
+				[_alertView setMessage:_express.message];
+				[_alertView show];
 			}
 			[[self tableView] reloadData];
 			[MBProgressHUD hideHUDForView:self.tableView animated:YES];
@@ -78,6 +88,8 @@
 	[[self tableView] registerNib:dataNib forCellReuseIdentifier:@"DataCell"];
 	
 	[[self tableView] setTableFooterView:[[UIView alloc] init]];
+	
+	
 }
 
 - (void)didReceiveMemoryWarning {
@@ -107,6 +119,10 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 	return 80;
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+	[[self navigationController] popViewControllerAnimated:YES];
 }
 
 @end

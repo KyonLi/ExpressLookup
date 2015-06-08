@@ -23,7 +23,7 @@
 		if (index % 2 == 0) {
 			[self setBackgroundColor:[UIColor whiteColor]];
 		} else {
-			[self setBackgroundColor:[UIColor lightGrayColor]];
+			[self setBackgroundColor:[UIColor colorWithWhite:0.000 alpha:0.250]];
 		}
 		UILabel *label1 = (UILabel *)[[self contentView] viewWithTag:200];
 		[label1 setAdjustsFontSizeToFitWidth:YES];
@@ -43,8 +43,6 @@
 		UILabel *label = (UILabel *)[[self contentView] viewWithTag:101];
 		if ([express.status isEqualToString:@"1"]) {
 			[label setText:[NSString stringWithFormat:@"%@ %@", express.companyName, express.nu]];
-		} else {
-			[label setText:[NSString stringWithFormat:@"%@", express.message]];
 		}
 	}
 }

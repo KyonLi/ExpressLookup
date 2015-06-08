@@ -50,7 +50,7 @@
 		[self setFrame:frame];
 		
 //        _menuColor = [UIColor colorWithRed:164.0/255.0 green:166.0/255.0 blue:169.0/255.0 alpha:1.0];
-		_menuColor = [UIColor grayColor];
+		_menuColor = [UIColor darkGrayColor];
 		
 		_cellNumber = cellNumber;
         
