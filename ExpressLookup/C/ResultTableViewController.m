@@ -14,13 +14,12 @@
 #import "ResultTableViewCell.h"
 
 @interface ResultTableViewController ()
-{
-	NSString *_expressNumber;
-	NSString *_company;
-	Express *_express;
-	NSArray *_dataArray;
-	NSInteger _rowNumber;
-}
+@property (nonatomic, retain) NSString *expressNumber;
+@property (nonatomic, retain) NSString *company;
+@property (nonatomic, retain) Express *express;
+@property (nonatomic, retain) NSArray *dataArray;
+@property (nonatomic, assign) NSInteger rowNumber;
+
 @end
 
 @implementation ResultTableViewController
@@ -49,14 +48,9 @@
 	
 	if ([[Singleton sharedInstance] isHtmlOnly:_company]) {
 		[DownloadData getHtmlDataWithBlock:^(Express *data, NSError *error) {
-			_express = data;
+			[self setExpress:data];
 			[_express setCompanyName:_company];
-			_dataArray = [data expressData];
-//			if (_dataArray.count) {
-//				_rowNumber = _dataArray.count + 1;
-//			} else {
-//				_rowNumber = 0;
-//			}
+			[self setDataArray:data.expressData];
 			_rowNumber = _dataArray.count + 1;
 			if ([data.status isEqualToString:@"1"]) {
 				[[Singleton sharedInstance] addHistoryRecord:_express];
@@ -66,14 +60,9 @@
 		} andExpressNumber:_expressNumber andCompany:[[Singleton sharedInstance] translateCompanyNameIntoCompanyID:_company] andOrder:order];
 	} else {
 		[DownloadData getJsonDataWithBlock:^(Express *data, NSError *error) {
-			_express = data;
+			[self setExpress:data];
 			[_express setCompanyName:_company];
-			_dataArray = [data expressData];
-//			if (_dataArray.count) {
-//				_rowNumber = _dataArray.count + 1;
-//			} else {
-//				_rowNumber = 0;
-//			}
+			[self setDataArray:data.expressData];
 			_rowNumber = _dataArray.count + 1;
 			if ([data.status isEqualToString:@"1"]) {
 				[[Singleton sharedInstance] addHistoryRecord:_express];

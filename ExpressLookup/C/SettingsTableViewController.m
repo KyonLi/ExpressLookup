@@ -10,10 +10,9 @@
 #import "MBProgressHUD.h"
 
 @interface SettingsTableViewController () <UIAlertViewDelegate>
-{
-	UISwitch *_orderSwitch;
-	UITableViewCell *_orderCell;
-}
+@property (nonatomic, retain) UISwitch *orderSwitch;
+@property (nonatomic, retain) UITableViewCell *orderCell;
+
 @end
 
 @implementation SettingsTableViewController
@@ -64,14 +63,14 @@
 		[cell setSelectionStyle:UITableViewCellSelectionStyleNone];
 	}
 	if (indexPath.section == 0) {
-		[[cell detailTextLabel] setNumberOfLines:2];
+		[[cell detailTextLabel] setTextColor:[UIColor darkGrayColor]];
 		_orderCell = cell;
 		[cell addSubview:_orderSwitch];
 		[[cell textLabel] setText:@"降序排列快递进度"];
 		if (_orderSwitch.isOn) {
-			[[cell detailTextLabel] setText:@"\n将以由新到旧的顺序显示快递详情"];
+			[[cell detailTextLabel] setText:@"将以由新到旧的顺序显示快递详情"];
 		} else {
-			[[cell detailTextLabel] setText:@"\n将以由旧到新顺的序显示快递详情"];
+			[[cell detailTextLabel] setText:@"将以由旧到新顺的序显示快递详情"];
 		}
 	} else {
 		[[cell textLabel] setText:@"清空历史记录"];

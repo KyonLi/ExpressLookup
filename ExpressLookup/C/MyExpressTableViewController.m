@@ -12,12 +12,11 @@
 #import "ResultTableViewController.h"
 
 @interface MyExpressTableViewController ()
-{
-	UIBarButtonItem *_rightButtonBegin;
-	UIBarButtonItem *_rightButtonFinish;
-	UIBarButtonItem *_leftButton;
-}
 @property (nonatomic, retain) NSArray *historyArray;
+@property (nonatomic, retain) UIBarButtonItem *rightButtonBegin;
+@property (nonatomic, retain) UIBarButtonItem *rightButtonFinish;
+@property (nonatomic, retain) UIBarButtonItem *leftButton;
+
 @end
 
 @implementation MyExpressTableViewController
