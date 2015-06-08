@@ -68,7 +68,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	ResultTableViewCell *cell = [[self tableView] dequeueReusableCellWithIdentifier:@"HistoryCell"];
 	Express *express = _historyArray[indexPath.row];
-	[cell refreshCellWithType:expressInfo andData:nil orExpress:express index:indexPath.row];
+	[cell refreshCellWithType:expressInfo Express:express Index:indexPath.row];
 	return cell;
 }
 

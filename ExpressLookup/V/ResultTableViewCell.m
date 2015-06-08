@@ -18,13 +18,15 @@
 	
 }
 
-- (void)refreshCellWithType:(cellType)cellType andData:(ExpressData *)data orExpress:(Express *)express index:(NSInteger)index {
+- (void)refreshCellWithType:(cellType)cellType Express:(Express *)express Index:(NSInteger)index {
 	if (cellType == expressData) {
 		if (index % 2 == 0) {
-			[self setBackgroundColor:[UIColor whiteColor]];
-		} else {
 			[self setBackgroundColor:[UIColor colorWithWhite:0.000 alpha:0.250]];
+		} else {
+			
+			[self setBackgroundColor:[UIColor whiteColor]];
 		}
+		ExpressData *data = [express.expressData objectAtIndex:index];
 		UILabel *label1 = (UILabel *)[[self contentView] viewWithTag:200];
 		[label1 setAdjustsFontSizeToFitWidth:YES];
 		UILabel *label2 = (UILabel *)[[self contentView] viewWithTag:201];

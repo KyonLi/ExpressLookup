@@ -13,6 +13,6 @@
 @interface ResultTableViewCell : UITableViewCell
 @property (nonatomic, retain) NSString *type;
 
-- (void)refreshCellWithType:(cellType)cellType andData:(ExpressData *)data orExpress:(Express *)express index:(NSInteger)index;
+- (void)refreshCellWithType:(cellType)cellType Express:(Express *)express Index:(NSInteger)index;
 
 @end

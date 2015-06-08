@@ -18,7 +18,7 @@
 @property (nonatomic, retain) NSString *company;
 @property (nonatomic, retain) Express *express;
 @property (nonatomic, retain) NSArray *dataArray;
-@property (nonatomic, assign) NSInteger rowNumber;
+@property (nonatomic, assign) NSInteger infoRowNumber;
 @property (nonatomic, retain) UIAlertView *alertView;
 
 @end
@@ -57,7 +57,7 @@
 			[self setDataArray:data.expressData];
 			if ([data.status isEqualToString:@"1"]) {
 				[[Singleton sharedInstance] addHistoryRecord:_express];
-				_rowNumber = _dataArray.count + 1;
+				_infoRowNumber = 1;
 			} else {
 				[_alertView setMessage:_express.message];
 				[_alertView show];
@@ -72,7 +72,7 @@
 			[self setDataArray:data.expressData];
 			if ([data.status isEqualToString:@"1"]) {
 				[[Singleton sharedInstance] addHistoryRecord:_express];
-				_rowNumber = _dataArray.count + 1;
+				_infoRowNumber = 1;
 			} else {
 				[_alertView setMessage:_express.message];
 				[_alertView show];
@@ -88,8 +88,6 @@
 	[[self tableView] registerNib:dataNib forCellReuseIdentifier:@"DataCell"];
 	
 	[[self tableView] setTableFooterView:[[UIView alloc] init]];
-	
-	
 }
 
 - (void)didReceiveMemoryWarning {
@@ -99,20 +97,28 @@
 
 #pragma mark - Table view data source
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+	return 2;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return _rowNumber;
+	if (section == 0) {
+		return _infoRowNumber;
+	} else {
+		return _dataArray.count;
+	}
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	ResultTableViewCell *cell = nil;
-	if (indexPath.row == 0) {
+	if (indexPath.section == 0) {
 		cell = [[self tableView] dequeueReusableCellWithIdentifier:@"InfoCell"];
-		[cell refreshCellWithType:expressInfo andData:nil orExpress:_express index:indexPath.row];
+		[cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+		[cell refreshCellWithType:expressInfo Express:_express Index:indexPath.row];
 	} else {
-		ExpressData *data = _dataArray[indexPath.row - 1];
 		cell = [[self tableView] dequeueReusableCellWithIdentifier:@"DataCell"];
-		[cell refreshCellWithType:expressData andData:data orExpress:nil index:indexPath.row];
+		[cell refreshCellWithType:expressData Express:_express Index:indexPath.row];
 	}
     return cell;
 }
