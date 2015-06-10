@@ -23,7 +23,7 @@
 		NSLog(@"%s", __func__);
 		NSLog(@"初始化偏好设置");
 		[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"order"];
-//		[[NSUserDefaults standardUserDefaults] synchronize];
+		[[NSUserDefaults standardUserDefaults] synchronize];
 	}
 	
 	_window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
