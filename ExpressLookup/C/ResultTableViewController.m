@@ -37,6 +37,8 @@
     [super viewDidLoad];
 	[[self navigationItem] setTitle:@"查询结果"];
 	
+	[[self tableView] setBackgroundColor:[UIColor colorWithRed:0.922 green:0.922 blue:0.945 alpha:1.000]];
+	
 	MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.tableView animated:YES];
 	[hud setLabelText:@"查询中，请稍候..."];
 	

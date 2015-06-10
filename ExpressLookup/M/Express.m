@@ -44,7 +44,7 @@
 	[aCoder encodeObject:_condition forKey:@"condition"];
 	[aCoder encodeObject:_status forKey:@"status"];
 	[aCoder encodeObject:_codenumber forKey:@"codenumber"];
-	[aCoder encodeObject:_expressData forKey:@"expressData"];
+//	[aCoder encodeObject:_expressData forKey:@"expressData"];
 	[aCoder encodeObject:_signedtime forKey:@"signedtime"];
 	[aCoder encodeObject:_state forKey:@"state"];
 	[aCoder encodeObject:_departure forKey:@"departure"];
@@ -69,7 +69,7 @@
 		_condition = [aDecoder decodeObjectForKey:@"condition"];
 		_status = [aDecoder decodeObjectForKey:@"status"];
 		_codenumber = [aDecoder decodeObjectForKey:@"codenumber"];
-		_expressData = [aDecoder decodeObjectForKey:@"expressData"];
+//		_expressData = [aDecoder decodeObjectForKey:@"expressData"];
 		_signedtime = [aDecoder decodeObjectForKey:@"signedtime"];
 		_state = [aDecoder decodeObjectForKey:@"state"];
 		_departure = [aDecoder decodeObjectForKey:@"departure"];

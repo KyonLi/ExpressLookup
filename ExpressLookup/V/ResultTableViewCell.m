@@ -21,7 +21,7 @@
 - (void)refreshCellWithType:(cellType)cellType Express:(Express *)express Index:(NSInteger)index {
 	if (cellType == expressData) {
 		if (index % 2 == 0) {
-			[self setBackgroundColor:[UIColor colorWithWhite:0.000 alpha:0.250]];
+			[self setBackgroundColor:[UIColor colorWithRed:0.922 green:0.922 blue:0.945 alpha:1.000]];
 		} else {
 			
 			[self setBackgroundColor:[UIColor whiteColor]];
