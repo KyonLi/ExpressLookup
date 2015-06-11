@@ -19,7 +19,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lookup_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="UcN-tX-0f0">
-                    <rect key="frame" x="0.0" y="64" width="600" height="532"/>
+                    <rect key="frame" x="0.0" y="64" width="600" height="490"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="haX-C6-6TU" userLabel="快递公司">
                     <rect key="frame" x="40" y="124" width="520" height="60"/>
@@ -40,7 +40,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="数据由 快递100 提供" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pAy-kp-tW0">
-                    <rect key="frame" x="10" y="565" width="580" height="15"/>
+                    <rect key="frame" x="10" y="515" width="580" height="15"/>
                     <fontDescription key="fontDescription" type="italicSystem" pointSize="12"/>
                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
@@ -59,7 +59,7 @@
                 <constraint firstItem="haX-C6-6TU" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="124" id="42w-vZ-VuP"/>
                 <constraint firstItem="VLo-Ec-HjF" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="80" id="9RH-ex-EU5"/>
                 <constraint firstAttribute="trailing" secondItem="UcN-tX-0f0" secondAttribute="trailing" id="Dfy-wR-HUA"/>
-                <constraint firstAttribute="bottom" secondItem="UcN-tX-0f0" secondAttribute="bottom" constant="4" id="EUJ-1P-DxF"/>
+                <constraint firstAttribute="bottom" secondItem="UcN-tX-0f0" secondAttribute="bottom" constant="46" id="EUJ-1P-DxF"/>
                 <constraint firstItem="VLo-Ec-HjF" firstAttribute="height" secondItem="5DF-Dn-9dD" secondAttribute="height" multiplier="0.75" id="FZd-h0-LDu"/>
                 <constraint firstItem="UcN-tX-0f0" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="IU5-QV-3ku"/>
                 <constraint firstItem="5DF-Dn-9dD" firstAttribute="height" secondItem="haX-C6-6TU" secondAttribute="height" id="K4L-zm-nE3"/>
@@ -70,7 +70,7 @@
                 <constraint firstAttribute="trailing" secondItem="VLo-Ec-HjF" secondAttribute="trailing" constant="80" id="iue-az-XHa"/>
                 <constraint firstItem="5DF-Dn-9dD" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="40" id="mjn-Ng-M5n"/>
                 <constraint firstAttribute="trailing" secondItem="5DF-Dn-9dD" secondAttribute="trailing" constant="40" id="sxm-y8-Ivj"/>
-                <constraint firstAttribute="bottom" secondItem="pAy-kp-tW0" secondAttribute="bottom" constant="20" id="vLL-CZ-b4k"/>
+                <constraint firstAttribute="bottom" secondItem="pAy-kp-tW0" secondAttribute="bottom" constant="70" id="vLL-CZ-b4k"/>
             </constraints>
         </view>
     </objects>

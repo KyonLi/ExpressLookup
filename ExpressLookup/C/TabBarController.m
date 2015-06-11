@@ -51,9 +51,9 @@
 	[[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName,shadow, NSShadowAttributeName,[UIFont boldSystemFontOfSize:23.0], NSFontAttributeName, nil]];
 	[[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
 	
-	[[UITabBar appearance] setBackgroundImage:[self imageWithColor:[UIColor blackColor] andSize:CGSizeMake(self.view.frame.size.width, 49)]];
+	[[UITabBar appearance] setBarTintColor:[UIColor blackColor]];
 	[[UITabBar appearance] setSelectionIndicatorImage:[self imageWithColor:[UIColor colorWithRed:0.000 green:0.502 blue:1.000 alpha:1.000] andSize:CGSizeMake(self.view.frame.size.width / 3 - 20, 49)]];
-	[[UITabBar appearance] setTintColor:[UIColor whiteColor]];
+	[[UITabBar appearance] setTintColor:[UIColor colorWithWhite:1.000 alpha:0.850]];
 }
 
 // 使用颜色创建UIImage
