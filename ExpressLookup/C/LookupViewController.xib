@@ -18,17 +18,17 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="lookup_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="UcN-tX-0f0">
-                    <rect key="frame" x="0.0" y="73" width="592" height="462"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lookup_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="UcN-tX-0f0">
+                    <rect key="frame" x="0.0" y="64" width="600" height="532"/>
                 </imageView>
-                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="haX-C6-6TU" userLabel="快递公司">
-                    <rect key="frame" x="147" y="124" width="306" height="60"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="haX-C6-6TU" userLabel="快递公司">
+                    <rect key="frame" x="40" y="124" width="520" height="60"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="60" id="QuI-Vf-jlN"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VLo-Ec-HjF">
-                    <rect key="frame" x="147" y="358" width="306" height="61"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VLo-Ec-HjF">
+                    <rect key="frame" x="80" y="354" width="440" height="45"/>
                     <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" type="system" weight="black" pointSize="26"/>
                     <state key="normal" title="查询">
@@ -39,14 +39,14 @@
                         <action selector="buttonClicked:" destination="-1" eventType="touchUpInside" id="gYC-eZ-KaX"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="数据由 快递100 提供" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pAy-kp-tW0">
-                    <rect key="frame" x="203" y="503" width="196" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="数据由 快递100 提供" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pAy-kp-tW0">
+                    <rect key="frame" x="10" y="565" width="580" height="15"/>
                     <fontDescription key="fontDescription" type="italicSystem" pointSize="12"/>
                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入快递单号" textAlignment="center" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="5DF-Dn-9dD">
-                    <rect key="frame" x="147" y="239" width="306" height="60"/>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入快递单号" textAlignment="center" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="5DF-Dn-9dD">
+                    <rect key="frame" x="40" y="234" width="520" height="60"/>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
                 </textField>

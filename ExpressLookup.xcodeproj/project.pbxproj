@@ -20,6 +20,8 @@
 		B74200801B2066840036DB38 /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = B74200701B2066840036DB38 /* XPathQuery.m */; };
 		B74200811B2066840036DB38 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B74200731B2066840036DB38 /* MBProgressHUD.m */; };
 		B74200821B2066840036DB38 /* MXPullDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = B74200761B2066840036DB38 /* MXPullDownMenu.m */; };
+		B76EBF121B298603005CFE98 /* LaunchScreen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B76EBF111B298603005CFE98 /* LaunchScreen.jpg */; };
+		B76EBF141B298674005CFE98 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B76EBF131B298674005CFE98 /* Icon.png */; };
 		B77A25E61B1BFFBA00950D29 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B77A25E51B1BFFBA00950D29 /* main.m */; };
 		B77A25F11B1BFFBA00950D29 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B77A25F01B1BFFBA00950D29 /* Images.xcassets */; };
 		B77A25F41B1BFFBA00950D29 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B77A25F21B1BFFBA00950D29 /* LaunchScreen.xib */; };
@@ -100,6 +102,8 @@
 		B74200731B2066840036DB38 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		B74200751B2066840036DB38 /* MXPullDownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXPullDownMenu.h; sourceTree = "<group>"; };
 		B74200761B2066840036DB38 /* MXPullDownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXPullDownMenu.m; sourceTree = "<group>"; };
+		B76EBF111B298603005CFE98 /* LaunchScreen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = LaunchScreen.jpg; sourceTree = "<group>"; };
+		B76EBF131B298674005CFE98 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		B77A25E01B1BFFBA00950D29 /* ExpressLookup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExpressLookup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B77A25E41B1BFFBA00950D29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B77A25E51B1BFFBA00950D29 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -272,6 +276,8 @@
 		B74200861B2066BB0036DB38 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				B76EBF131B298674005CFE98 /* Icon.png */,
+				B76EBF111B298603005CFE98 /* LaunchScreen.jpg */,
 				B71E2FBB1B217837002FAA1E /* 253-person.png */,
 				B71E2FBC1B217837002FAA1E /* 253-person@2x.png */,
 				B71E2FB71B2177DF002FAA1E /* 195-barcode.png */,
@@ -575,6 +581,7 @@
 				B79B017E1B1F1282005B8407 /* companyArrayHtmlOnly.txt in Resources */,
 				B7B5B1E41B206E8500690F7B /* FontAwesome.ttf in Resources */,
 				B71E2FB21B21747A002FAA1E /* 20-gear-2@2x.png in Resources */,
+				B76EBF141B298674005CFE98 /* Icon.png in Resources */,
 				B7F35A941B1D63B7001E2488 /* ExpressDataTableViewCell.xib in Resources */,
 				B77A27941B1C7E4900950D29 /* companyArray.txt in Resources */,
 				B7F35A501B1D511E001E2488 /* ExpressInfoTableViewCell.xib in Resources */,
@@ -586,6 +593,7 @@
 				B71E2FB11B21747A002FAA1E /* 20-gear-2.png in Resources */,
 				B71E2FAE1B213E3A002FAA1E /* lookup_background.png in Resources */,
 				B77A25F11B1BFFBA00950D29 /* Images.xcassets in Resources */,
+				B76EBF121B298603005CFE98 /* LaunchScreen.jpg in Resources */,
 				B71E2FBD1B217837002FAA1E /* 253-person.png in Resources */,
 				B71E2FBE1B217837002FAA1E /* 253-person@2x.png in Resources */,
 			);
@@ -760,6 +768,7 @@
 					/usr/include/libxml2,
 				);
 				INFOPLIST_FILE = ExpressLookup/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -776,6 +785,7 @@
 					/usr/include/libxml2,
 				);
 				INFOPLIST_FILE = ExpressLookup/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
