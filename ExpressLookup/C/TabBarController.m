@@ -46,29 +46,24 @@
 	
 	[[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.176 green:0.510 blue:0.749 alpha:1.000]];
 	NSShadow *shadow = [[NSShadow alloc] init];
-	shadow.shadowColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.8];
-	shadow.shadowOffset = CGSizeMake(0, 1);
-	[[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:[UIColor colorWithRed:245.0/255.0 green:245.0/255.0 blue:245.0/255.0 alpha:1.0], NSForegroundColorAttributeName,shadow, NSShadowAttributeName,[UIFont fontWithName:@"HelveticaNeue-CondensedBlack" size:21.0], NSFontAttributeName, nil]];
+	shadow.shadowColor = [UIColor clearColor];
+	shadow.shadowOffset = CGSizeMake(0, 0);
+	[[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName,shadow, NSShadowAttributeName,[UIFont boldSystemFontOfSize:23.0], NSFontAttributeName, nil]];
 	[[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
 	
-	// 使用颜色创建UIImage
-	CGSize imageSize = CGSizeMake(self.view.frame.size.width, 49);
-	UIGraphicsBeginImageContextWithOptions(imageSize, 0, [UIScreen mainScreen].scale);
-	[[UIColor blackColor] set];
-	UIRectFill(CGRectMake(0, 0, imageSize.width, imageSize.height));
-	UIImage *tabBarBackgroundImage = UIGraphicsGetImageFromCurrentImageContext();
-	UIGraphicsEndImageContext();
-	
-	imageSize = CGSizeMake(self.view.frame.size.width / 3 - 20, 49);
-	UIGraphicsBeginImageContextWithOptions(imageSize, 0, [UIScreen mainScreen].scale);
-	[[UIColor colorWithRed:0.000 green:0.502 blue:1.000 alpha:1.000] set];
-	UIRectFill(CGRectMake(0, 0, imageSize.width, imageSize.height));
-	UIImage *tabBarSelectionIndicatorImage = UIGraphicsGetImageFromCurrentImageContext();
-	UIGraphicsEndImageContext();
-	
-	[[UITabBar appearance] setBackgroundImage:tabBarBackgroundImage];
-	[[UITabBar appearance] setSelectionIndicatorImage:tabBarSelectionIndicatorImage];
+	[[UITabBar appearance] setBackgroundImage:[self imageWithColor:[UIColor blackColor] andSize:CGSizeMake(self.view.frame.size.width, 49)]];
+	[[UITabBar appearance] setSelectionIndicatorImage:[self imageWithColor:[UIColor colorWithRed:0.000 green:0.502 blue:1.000 alpha:1.000] andSize:CGSizeMake(self.view.frame.size.width / 3 - 20, 49)]];
 	[[UITabBar appearance] setTintColor:[UIColor whiteColor]];
+}
+
+// 使用颜色创建UIImage
+- (UIImage *)imageWithColor:(UIColor *)color andSize:(CGSize)size {
+	UIGraphicsBeginImageContextWithOptions(size, 0, [UIScreen mainScreen].scale);
+	[color set];
+	UIRectFill(CGRectMake(0, 0, size.width, size.height));
+	UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+	UIGraphicsEndImageContext();
+	return image;
 }
 
 - (void)didReceiveMemoryWarning {
