@@ -17,6 +17,14 @@
     return self;
 }
 
+- (id)valueForUndefinedKey:(NSString *)key {
+	return nil;
+}
+
+- (void)setValue:(id)value forUndefinedKey:(NSString *)key {
+	
+}
+
 #pragma mark --归档时对数据的处理
 - (void)encodeWithCoder:(NSCoder *)aCoder {
 	[aCoder encodeObject:_time forKey:@"time"];
