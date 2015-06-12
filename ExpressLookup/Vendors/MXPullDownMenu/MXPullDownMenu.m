@@ -7,6 +7,7 @@
 //
 
 #import "MXPullDownMenu.h"
+#import "Company.h"
 
 @implementation MXPullDownMenu
 {
@@ -53,7 +54,7 @@
 		_menuColor = [UIColor darkGrayColor];
 		
 		_cellNumber = cellNumber;
-        
+		
         _array = array;
 
         _numOfMenu = _array.count;
@@ -194,22 +195,16 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
         cell.textLabel.font = [UIFont systemFontOfSize:17.0];
     }
-    
-//    [cell.textLabel setTextColor:[UIColor grayColor]];
-    [cell setAccessoryType:UITableViewCellAccessoryNone];
-    cell.textLabel.text = _array[_currentSelectedMenudIndex][indexPath.row];
-    
-    if (cell.textLabel.text == [(CATextLayer *)[_titles objectAtIndex:_currentSelectedMenudIndex] string]) {
-        [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
-        [cell.textLabel setTextColor:[tableView tintColor]];
-    }
-    
+	
+	[cell setAccessoryType:UITableViewCellAccessoryNone];
+	Company *com = _array[_currentSelectedMenudIndex][indexPath.row];
+	cell.textLabel.text = com.comName;
     return cell;
 }
 
-
-
-
+//- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+//	
+//}
 
 #pragma mark - animation
 
@@ -414,7 +409,8 @@
 {
     
     CATextLayer *title = (CATextLayer *)_titles[_currentSelectedMenudIndex];
-    title.string = [[_array objectAtIndex:_currentSelectedMenudIndex] objectAtIndex:row];
+    Company *com = [[_array objectAtIndex:_currentSelectedMenudIndex] objectAtIndex:row];
+	title.string = com.comName;
     
     
     [self animateIdicator:_indicators[_currentSelectedMenudIndex] background:_backGroundView tableView:_tableView title:_titles[_currentSelectedMenudIndex] forward:NO complecte:^{

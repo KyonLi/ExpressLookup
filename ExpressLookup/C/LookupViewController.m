@@ -11,6 +11,7 @@
 #import "ResultTableViewController.h"
 #import "DownloadData.h"
 #import "UIButton+Bootstrap.h"
+#import "Company.h"
 
 @interface LookupViewController () <MXPullDownMenuDelegate>
 @property (weak, nonatomic) IBOutlet UIView *companyView;
@@ -46,7 +47,8 @@
 }
 
 - (void)PullDownMenu:(MXPullDownMenu *)pullDownMenu didSelectRowAtColumn:(NSInteger)column row:(NSInteger)row {
-	[self setCompanyName:[[Singleton sharedInstance] getCompanyNameArray][row]];
+	Company *com = [[Singleton sharedInstance] getCompanyNameArray][row];
+	[self setCompanyName:com.comName];
 }
 
 - (IBAction)buttonClicked:(UIButton *)sender {

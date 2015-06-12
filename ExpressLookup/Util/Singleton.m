@@ -8,6 +8,7 @@
 
 #import "Singleton.h"
 #import "Express.h"
+#import "Company.h"
 
 @implementation Singleton
 {
@@ -84,10 +85,21 @@ static bool isFirstAccess = YES;
 	
 	NSString *dicPath = [[NSBundle mainBundle] pathForResource:@"companyDic" ofType:@"txt"];
 	_companyDic = [NSDictionary dictionaryWithContentsOfFile:dicPath];
-	NSString *arrayPath = [[NSBundle mainBundle] pathForResource:@"companyArray" ofType:@"txt"];
-	_companyArray = [NSArray arrayWithContentsOfFile:arrayPath];
 	NSString *arrayHtmlOnlyPath = [[NSBundle mainBundle] pathForResource:@"companyArrayHtmlOnly" ofType:@"txt"];
 	_companyArrayHtmlOnly = [NSArray arrayWithContentsOfFile:arrayHtmlOnlyPath];
+	NSString *arrayPath = [[NSBundle mainBundle] pathForResource:@"companyArray" ofType:@"txt"];
+	NSArray *tmpArray = [NSArray arrayWithContentsOfFile:arrayPath];
+	
+	NSMutableArray *comObjTmp = [NSMutableArray new];
+	for (NSString *str in tmpArray) {
+		Company *com = [[Company alloc] initWithCompanyName:str];
+		[comObjTmp addObject:com];
+		NSLog(@"%@", com);
+	}
+	_companyArray = [comObjTmp sortedArrayUsingComparator:^NSComparisonResult(Company *obj1, Company *obj2) {
+		return [obj1.comPinYin caseInsensitiveCompare:obj2.comPinYin];
+	}];
+	comObjTmp = nil;
     return self;
 }
 

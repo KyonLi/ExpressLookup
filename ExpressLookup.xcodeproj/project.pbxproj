@@ -22,6 +22,14 @@
 		B74200821B2066840036DB38 /* MXPullDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = B74200761B2066840036DB38 /* MXPullDownMenu.m */; };
 		B76EBF121B298603005CFE98 /* LaunchScreen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B76EBF111B298603005CFE98 /* LaunchScreen.jpg */; };
 		B76EBF141B298674005CFE98 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B76EBF131B298674005CFE98 /* Icon.png */; };
+		B76EBF2F1B2A8A7A005CFE98 /* ChineseToPinyinResource.m in Sources */ = {isa = PBXBuildFile; fileRef = B76EBF231B2A8A7A005CFE98 /* ChineseToPinyinResource.m */; };
+		B76EBF301B2A8A7A005CFE98 /* HanyuPinyinOutputFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = B76EBF251B2A8A7A005CFE98 /* HanyuPinyinOutputFormat.m */; };
+		B76EBF311B2A8A7A005CFE98 /* NSString+PinYin4Cocoa.m in Sources */ = {isa = PBXBuildFile; fileRef = B76EBF271B2A8A7A005CFE98 /* NSString+PinYin4Cocoa.m */; };
+		B76EBF321B2A8A7A005CFE98 /* PinyinFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = B76EBF2A1B2A8A7A005CFE98 /* PinyinFormatter.m */; };
+		B76EBF331B2A8A7A005CFE98 /* PinyinHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B76EBF2C1B2A8A7A005CFE98 /* PinyinHelper.m */; };
+		B76EBF341B2A8A7A005CFE98 /* unicode_to_hanyu_pinyin.txt in Resources */ = {isa = PBXBuildFile; fileRef = B76EBF2E1B2A8A7A005CFE98 /* unicode_to_hanyu_pinyin.txt */; };
+		B76EBF371B2A8C12005CFE98 /* Company.m in Sources */ = {isa = PBXBuildFile; fileRef = B76EBF361B2A8C12005CFE98 /* Company.m */; };
+		B76EBF3A1B2ABE6F005CFE98 /* CompanyGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = B76EBF391B2ABE6F005CFE98 /* CompanyGroup.m */; };
 		B77A25E61B1BFFBA00950D29 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B77A25E51B1BFFBA00950D29 /* main.m */; };
 		B77A25F11B1BFFBA00950D29 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B77A25F01B1BFFBA00950D29 /* Images.xcassets */; };
 		B77A25F41B1BFFBA00950D29 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B77A25F21B1BFFBA00950D29 /* LaunchScreen.xib */; };
@@ -104,6 +112,22 @@
 		B74200761B2066840036DB38 /* MXPullDownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXPullDownMenu.m; sourceTree = "<group>"; };
 		B76EBF111B298603005CFE98 /* LaunchScreen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = LaunchScreen.jpg; sourceTree = "<group>"; };
 		B76EBF131B298674005CFE98 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		B76EBF221B2A8A7A005CFE98 /* ChineseToPinyinResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChineseToPinyinResource.h; sourceTree = "<group>"; };
+		B76EBF231B2A8A7A005CFE98 /* ChineseToPinyinResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChineseToPinyinResource.m; sourceTree = "<group>"; };
+		B76EBF241B2A8A7A005CFE98 /* HanyuPinyinOutputFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HanyuPinyinOutputFormat.h; sourceTree = "<group>"; };
+		B76EBF251B2A8A7A005CFE98 /* HanyuPinyinOutputFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HanyuPinyinOutputFormat.m; sourceTree = "<group>"; };
+		B76EBF261B2A8A7A005CFE98 /* NSString+PinYin4Cocoa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+PinYin4Cocoa.h"; sourceTree = "<group>"; };
+		B76EBF271B2A8A7A005CFE98 /* NSString+PinYin4Cocoa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+PinYin4Cocoa.m"; sourceTree = "<group>"; };
+		B76EBF281B2A8A7A005CFE98 /* PinYin4Objc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinYin4Objc.h; sourceTree = "<group>"; };
+		B76EBF291B2A8A7A005CFE98 /* PinyinFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinyinFormatter.h; sourceTree = "<group>"; };
+		B76EBF2A1B2A8A7A005CFE98 /* PinyinFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PinyinFormatter.m; sourceTree = "<group>"; };
+		B76EBF2B1B2A8A7A005CFE98 /* PinyinHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinyinHelper.h; sourceTree = "<group>"; };
+		B76EBF2C1B2A8A7A005CFE98 /* PinyinHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PinyinHelper.m; sourceTree = "<group>"; };
+		B76EBF2E1B2A8A7A005CFE98 /* unicode_to_hanyu_pinyin.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = unicode_to_hanyu_pinyin.txt; sourceTree = "<group>"; };
+		B76EBF351B2A8C12005CFE98 /* Company.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Company.h; sourceTree = "<group>"; };
+		B76EBF361B2A8C12005CFE98 /* Company.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Company.m; sourceTree = "<group>"; };
+		B76EBF381B2ABE6F005CFE98 /* CompanyGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompanyGroup.h; sourceTree = "<group>"; };
+		B76EBF391B2ABE6F005CFE98 /* CompanyGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompanyGroup.m; sourceTree = "<group>"; };
 		B77A25E01B1BFFBA00950D29 /* ExpressLookup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExpressLookup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B77A25E41B1BFFBA00950D29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B77A25E51B1BFFBA00950D29 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -233,6 +257,7 @@
 		B74200691B2066840036DB38 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				B76EBF201B2A8A7A005CFE98 /* PinYin4Objc */,
 				B7B5B1E71B20906800690F7B /* SDWebImage */,
 				B7B5B1DE1B206E8500690F7B /* StrapButton */,
 				B742006A1B2066840036DB38 /* Hpple */,
@@ -287,6 +312,41 @@
 				B71E2FAD1B213E3A002FAA1E /* lookup_background.png */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		B76EBF201B2A8A7A005CFE98 /* PinYin4Objc */ = {
+			isa = PBXGroup;
+			children = (
+				B76EBF211B2A8A7A005CFE98 /* Classes */,
+				B76EBF2D1B2A8A7A005CFE98 /* Resources */,
+			);
+			path = PinYin4Objc;
+			sourceTree = "<group>";
+		};
+		B76EBF211B2A8A7A005CFE98 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				B76EBF221B2A8A7A005CFE98 /* ChineseToPinyinResource.h */,
+				B76EBF231B2A8A7A005CFE98 /* ChineseToPinyinResource.m */,
+				B76EBF241B2A8A7A005CFE98 /* HanyuPinyinOutputFormat.h */,
+				B76EBF251B2A8A7A005CFE98 /* HanyuPinyinOutputFormat.m */,
+				B76EBF261B2A8A7A005CFE98 /* NSString+PinYin4Cocoa.h */,
+				B76EBF271B2A8A7A005CFE98 /* NSString+PinYin4Cocoa.m */,
+				B76EBF281B2A8A7A005CFE98 /* PinYin4Objc.h */,
+				B76EBF291B2A8A7A005CFE98 /* PinyinFormatter.h */,
+				B76EBF2A1B2A8A7A005CFE98 /* PinyinFormatter.m */,
+				B76EBF2B1B2A8A7A005CFE98 /* PinyinHelper.h */,
+				B76EBF2C1B2A8A7A005CFE98 /* PinyinHelper.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		B76EBF2D1B2A8A7A005CFE98 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B76EBF2E1B2A8A7A005CFE98 /* unicode_to_hanyu_pinyin.txt */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		B77A25D71B1BFFB900950D29 = {
@@ -359,6 +419,10 @@
 				B77A26C91B1C26E200950D29 /* Express.m */,
 				B77A26CB1B1C275100950D29 /* ExpressData.h */,
 				B77A26CC1B1C275100950D29 /* ExpressData.m */,
+				B76EBF381B2ABE6F005CFE98 /* CompanyGroup.h */,
+				B76EBF391B2ABE6F005CFE98 /* CompanyGroup.m */,
+				B76EBF351B2A8C12005CFE98 /* Company.h */,
+				B76EBF361B2A8C12005CFE98 /* Company.m */,
 			);
 			path = M;
 			sourceTree = "<group>";
@@ -579,6 +643,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B79B017E1B1F1282005B8407 /* companyArrayHtmlOnly.txt in Resources */,
+				B76EBF341B2A8A7A005CFE98 /* unicode_to_hanyu_pinyin.txt in Resources */,
 				B7B5B1E41B206E8500690F7B /* FontAwesome.ttf in Resources */,
 				B71E2FB21B21747A002FAA1E /* 20-gear-2@2x.png in Resources */,
 				B76EBF141B298674005CFE98 /* Icon.png in Resources */,
@@ -607,6 +672,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7B5B2141B20906800690F7B /* UIImage+MultiFormat.m in Sources */,
+				B76EBF3A1B2ABE6F005CFE98 /* CompanyGroup.m in Sources */,
 				B7B5B20E1B20906800690F7B /* SDWebImageDownloader.m in Sources */,
 				B7B5B2151B20906800690F7B /* UIImage+WebP.m in Sources */,
 				B79B01811B1F17AB005B8407 /* Singleton.m in Sources */,
@@ -635,27 +701,33 @@
 				B77A26C01B1C22BB00950D29 /* UIRefreshControl+AFNetworking.m in Sources */,
 				B74200801B2066840036DB38 /* XPathQuery.m in Sources */,
 				B77A26C11B1C22BB00950D29 /* UIWebView+AFNetworking.m in Sources */,
+				B76EBF321B2A8A7A005CFE98 /* PinyinFormatter.m in Sources */,
 				B7F35A4F1B1D511E001E2488 /* ResultTableViewCell.m in Sources */,
+				B76EBF371B2A8C12005CFE98 /* Company.m in Sources */,
 				B79B014A1B1EC8FD005B8407 /* Help.m in Sources */,
 				B77A26C71B1C246000950D29 /* DownloadData.m in Sources */,
 				B77A26C41B1C22E100950D29 /* AFAppDotNetAPIClient.m in Sources */,
 				B742007F1B2066840036DB38 /* TFHppleElement.m in Sources */,
+				B76EBF301B2A8A7A005CFE98 /* HanyuPinyinOutputFormat.m in Sources */,
 				B77A26B31B1C22BB00950D29 /* AFHTTPSessionManager.m in Sources */,
 				B77A26BC1B1C22BB00950D29 /* UIAlertView+AFNetworking.m in Sources */,
 				B7B5B2131B20906800690F7B /* UIImage+GIF.m in Sources */,
 				B742007E1B2066840036DB38 /* TFHpple.m in Sources */,
 				B7B5B2101B20906800690F7B /* SDWebImageManager.m in Sources */,
 				B74200821B2066840036DB38 /* MXPullDownMenu.m in Sources */,
+				B76EBF2F1B2A8A7A005CFE98 /* ChineseToPinyinResource.m in Sources */,
 				B77A26B71B1C22BB00950D29 /* AFURLRequestSerialization.m in Sources */,
 				B74200811B2066840036DB38 /* MBProgressHUD.m in Sources */,
 				B7B5B20C1B20906800690F7B /* SDWebImageCompat.m in Sources */,
 				B77A26BA1B1C22BB00950D29 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				B77A277B1B1C5BD000950D29 /* AppDelegate.m in Sources */,
 				B7B5B1E51B206E8500690F7B /* NSString+FontAwesome.m in Sources */,
+				B76EBF311B2A8A7A005CFE98 /* NSString+PinYin4Cocoa.m in Sources */,
 				B77A26B91B1C22BB00950D29 /* AFURLSessionManager.m in Sources */,
 				B77A277E1B1C5C3600950D29 /* TabBarController.m in Sources */,
 				B7B5B2111B20906800690F7B /* SDWebImagePrefetcher.m in Sources */,
 				B77A26CA1B1C26E200950D29 /* Express.m in Sources */,
+				B76EBF331B2A8A7A005CFE98 /* PinyinHelper.m in Sources */,
 				B7F35ADD1B1DC64F001E2488 /* MyExpressTableViewController.m in Sources */,
 				B7B5B2181B20906800690F7B /* UIView+WebCacheOperation.m in Sources */,
 				B7B5B20B1B20906800690F7B /* SDImageCache.m in Sources */,
