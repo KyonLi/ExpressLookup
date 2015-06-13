@@ -14,8 +14,8 @@
 #import "ResultTableViewCell.h"
 
 @interface ResultTableViewController () <UIAlertViewDelegate>
-@property (nonatomic, retain) NSString *expressNumber;
-@property (nonatomic, retain) NSString *company;
+@property (nonatomic, copy) NSString *expressNumber;
+@property (nonatomic, copy) NSString *company;
 @property (nonatomic, retain) Express *express;
 @property (nonatomic, retain) NSArray *dataArray;
 @property (nonatomic, assign) NSInteger infoRowNumber;

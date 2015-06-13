@@ -10,9 +10,9 @@
 
 @interface ExpressData : NSObject
 
-@property (nonatomic, retain, readonly) NSString *time;
-@property (nonatomic, retain, readonly) NSString *location;
-@property (nonatomic, retain, readonly) NSString *context;
+@property (nonatomic, copy, readonly) NSString *time;
+@property (nonatomic, copy, readonly) NSString *location;
+@property (nonatomic, copy, readonly) NSString *context;
 
 - (instancetype)initWithDic:(NSDictionary *)dic;
 

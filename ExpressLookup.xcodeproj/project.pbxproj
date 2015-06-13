@@ -29,7 +29,6 @@
 		B76EBF331B2A8A7A005CFE98 /* PinyinHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B76EBF2C1B2A8A7A005CFE98 /* PinyinHelper.m */; };
 		B76EBF341B2A8A7A005CFE98 /* unicode_to_hanyu_pinyin.txt in Resources */ = {isa = PBXBuildFile; fileRef = B76EBF2E1B2A8A7A005CFE98 /* unicode_to_hanyu_pinyin.txt */; };
 		B76EBF371B2A8C12005CFE98 /* Company.m in Sources */ = {isa = PBXBuildFile; fileRef = B76EBF361B2A8C12005CFE98 /* Company.m */; };
-		B76EBF3A1B2ABE6F005CFE98 /* CompanyGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = B76EBF391B2ABE6F005CFE98 /* CompanyGroup.m */; };
 		B77A25E61B1BFFBA00950D29 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B77A25E51B1BFFBA00950D29 /* main.m */; };
 		B77A25F11B1BFFBA00950D29 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B77A25F01B1BFFBA00950D29 /* Images.xcassets */; };
 		B77A25F41B1BFFBA00950D29 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B77A25F21B1BFFBA00950D29 /* LaunchScreen.xib */; };
@@ -126,8 +125,6 @@
 		B76EBF2E1B2A8A7A005CFE98 /* unicode_to_hanyu_pinyin.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = unicode_to_hanyu_pinyin.txt; sourceTree = "<group>"; };
 		B76EBF351B2A8C12005CFE98 /* Company.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Company.h; sourceTree = "<group>"; };
 		B76EBF361B2A8C12005CFE98 /* Company.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Company.m; sourceTree = "<group>"; };
-		B76EBF381B2ABE6F005CFE98 /* CompanyGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompanyGroup.h; sourceTree = "<group>"; };
-		B76EBF391B2ABE6F005CFE98 /* CompanyGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompanyGroup.m; sourceTree = "<group>"; };
 		B77A25E01B1BFFBA00950D29 /* ExpressLookup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExpressLookup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B77A25E41B1BFFBA00950D29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B77A25E51B1BFFBA00950D29 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -419,8 +416,6 @@
 				B77A26C91B1C26E200950D29 /* Express.m */,
 				B77A26CB1B1C275100950D29 /* ExpressData.h */,
 				B77A26CC1B1C275100950D29 /* ExpressData.m */,
-				B76EBF381B2ABE6F005CFE98 /* CompanyGroup.h */,
-				B76EBF391B2ABE6F005CFE98 /* CompanyGroup.m */,
 				B76EBF351B2A8C12005CFE98 /* Company.h */,
 				B76EBF361B2A8C12005CFE98 /* Company.m */,
 			);
@@ -672,7 +667,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7B5B2141B20906800690F7B /* UIImage+MultiFormat.m in Sources */,
-				B76EBF3A1B2ABE6F005CFE98 /* CompanyGroup.m in Sources */,
 				B7B5B20E1B20906800690F7B /* SDWebImageDownloader.m in Sources */,
 				B7B5B2151B20906800690F7B /* UIImage+WebP.m in Sources */,
 				B79B01811B1F17AB005B8407 /* Singleton.m in Sources */,

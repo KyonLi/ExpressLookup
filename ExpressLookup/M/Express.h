@@ -10,26 +10,26 @@
 
 @interface Express : NSObject <NSSecureCoding>
 
-@property (nonatomic, retain, readonly) NSString *nu;
-@property (nonatomic, retain, readonly) NSString *comcontact;
-@property (nonatomic, retain, readonly) NSString *companytype;
-@property (nonatomic, retain, readonly) NSString *com;
-@property (nonatomic, retain, readonly) NSString *signname;
-@property (nonatomic, retain, readonly) NSString *condition;
-@property (nonatomic, retain, readonly) NSString *status;
-@property (nonatomic, retain, readonly) NSString *codenumber;
-@property (nonatomic, retain, readonly) NSMutableArray *expressData;
-@property (nonatomic, retain, readonly) NSString *signedtime;
-@property (nonatomic, retain, readonly) NSString *state;
-@property (nonatomic, retain, readonly) NSString *departure;
-@property (nonatomic, retain, readonly) NSString *addressee;
-@property (nonatomic, retain, readonly) NSString *destination;
-@property (nonatomic, retain, readonly) NSString *message;
-@property (nonatomic, retain, readonly) NSString *ischeck;
-@property (nonatomic, retain, readonly) NSString *pickuptime;
-@property (nonatomic, retain, readonly) NSString *comurl;
-@property (nonatomic, retain) NSString *companyName;
-@property (nonatomic, retain, readonly) NSString *comIcon;
+@property (nonatomic, copy, readonly) NSString *nu;
+@property (nonatomic, copy, readonly) NSString *comcontact;
+@property (nonatomic, copy, readonly) NSString *companytype;
+@property (nonatomic, copy, readonly) NSString *com;
+@property (nonatomic, copy, readonly) NSString *signname;
+@property (nonatomic, copy, readonly) NSString *condition;
+@property (nonatomic, copy, readonly) NSString *status;
+@property (nonatomic, copy, readonly) NSString *codenumber;
+@property (nonatomic, readonly) NSMutableArray *expressData;
+@property (nonatomic, copy, readonly) NSString *signedtime;
+@property (nonatomic, copy, readonly) NSString *state;
+@property (nonatomic, copy, readonly) NSString *departure;
+@property (nonatomic, copy, readonly) NSString *addressee;
+@property (nonatomic, copy, readonly) NSString *destination;
+@property (nonatomic, copy, readonly) NSString *message;
+@property (nonatomic, copy, readonly) NSString *ischeck;
+@property (nonatomic, copy, readonly) NSString *pickuptime;
+@property (nonatomic, copy, readonly) NSString *comurl;
+@property (nonatomic, copy) NSString *companyName;
+@property (nonatomic, copy, readonly) NSString *comIcon;
 
 - (instancetype)initWithDic:(NSDictionary *)dic;
 

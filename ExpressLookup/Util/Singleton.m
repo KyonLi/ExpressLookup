@@ -94,7 +94,6 @@ static bool isFirstAccess = YES;
 	for (NSString *str in tmpArray) {
 		Company *com = [[Company alloc] initWithCompanyName:str];
 		[comObjTmp addObject:com];
-		NSLog(@"%@", com);
 	}
 	_companyArray = [comObjTmp sortedArrayUsingComparator:^NSComparisonResult(Company *obj1, Company *obj2) {
 		return [obj1.comPinYin caseInsensitiveCompare:obj2.comPinYin];
