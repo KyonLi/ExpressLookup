@@ -96,11 +96,11 @@ static bool isFirstAccess = YES;
 		NSLog(@"收藏初始化成功");
 	}
 	
-	NSString *dicPath = [[NSBundle mainBundle] pathForResource:@"companyDic" ofType:@"txt"];
+	NSString *dicPath = [[NSBundle mainBundle] pathForResource:@"companyDic" ofType:@"plist"];
 	_companyDic = [NSDictionary dictionaryWithContentsOfFile:dicPath];
-	NSString *arrayHtmlOnlyPath = [[NSBundle mainBundle] pathForResource:@"companyArrayHtmlOnly" ofType:@"txt"];
+	NSString *arrayHtmlOnlyPath = [[NSBundle mainBundle] pathForResource:@"companyArrayHtmlOnly" ofType:@"plist"];
 	_companyArrayHtmlOnly = [NSArray arrayWithContentsOfFile:arrayHtmlOnlyPath];
-	NSString *arrayPath = [[NSBundle mainBundle] pathForResource:@"companyArray" ofType:@"txt"];
+	NSString *arrayPath = [[NSBundle mainBundle] pathForResource:@"companyArray" ofType:@"plist"];
 	NSArray *tmpArray = [NSArray arrayWithContentsOfFile:arrayPath];
 	
 	NSMutableArray *comObjTmp = [NSMutableArray new];

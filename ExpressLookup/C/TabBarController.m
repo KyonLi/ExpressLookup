@@ -9,6 +9,7 @@
 #import "TabBarController.h"
 #import "MyExpressTableViewController.h"
 #import "LookupViewController.h"
+#import "ContactTableViewController.h"
 #import "SettingsTableViewController.h"
 
 @interface TabBarController ()
@@ -32,13 +33,19 @@
 	[[lookupNav tabBarItem] setImage:[UIImage imageNamed:@"195-barcode"]];
 	[[lookupNav tabBarItem] setSelectedImage:[UIImage imageNamed:@"195-barcode"]];
 	
+	ContactTableViewController *contactVC = [[ContactTableViewController alloc] init];
+	UINavigationController *contactNav = [[UINavigationController alloc] initWithRootViewController:contactVC];
+	[[contactNav tabBarItem] setTitle:@"电话簿"];
+	[[contactNav tabBarItem] setImage:[UIImage imageNamed:@"104-index-cards"]];
+	[[contactNav tabBarItem] setSelectedImage:[UIImage imageNamed:@"104-index-cards"]];
+	
 	SettingsTableViewController *settingsVC = [[SettingsTableViewController alloc] init];
 	UINavigationController *settingsNav = [[UINavigationController alloc] initWithRootViewController:settingsVC];
 	[[settingsNav tabBarItem] setTitle:@"设置"];
 	[[settingsNav tabBarItem] setImage:[UIImage imageNamed:@"20-gear-2"]];
 	[[settingsNav tabBarItem] setSelectedImage:[UIImage imageNamed:@"20-gear-2"]];
 	
-	[self setViewControllers:@[myExpressNav, lookupNav, settingsNav] animated:YES];
+	[self setViewControllers:@[myExpressNav, lookupNav, contactNav, settingsNav] animated:YES];
 	
 	[self setSelectedIndex:1];
 	
@@ -52,7 +59,7 @@
 	[[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
 	
 	[[UITabBar appearance] setBarTintColor:[UIColor blackColor]];
-	[[UITabBar appearance] setSelectionIndicatorImage:[self imageWithColor:[UIColor colorWithRed:0.000 green:0.502 blue:1.000 alpha:1.000] andSize:CGSizeMake(self.view.frame.size.width / 3 - 20, 49)]];
+	[[UITabBar appearance] setSelectionIndicatorImage:[self imageWithColor:[UIColor colorWithRed:0.000 green:0.502 blue:1.000 alpha:1.000] andSize:CGSizeMake(self.view.frame.size.width / 4, 49)]];
 	[[UITabBar appearance] setTintColor:[UIColor colorWithWhite:1.000 alpha:0.850]];
 }
 

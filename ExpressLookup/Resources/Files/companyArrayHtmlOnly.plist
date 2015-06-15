@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<string>包裹/平邮/挂号信</string>
+	<string>EMS</string>
+	<string>挂号信</string>
+	<string>国内邮件</string>
+	<string>国际邮件</string>
+	<string>申通</string>
+	<string>顺丰速递</string>
+	<string>圆通速递</string>
+	<string>韵达快运</string>
+	<string>邮政国内</string>
+	<string>邮政国际</string>
+	<string>中通速递</string>
+</array>
+</plist>
