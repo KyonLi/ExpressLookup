@@ -13,6 +13,7 @@
 @implementation Singleton
 {
 	NSMutableArray *_historyArray;
+	NSMutableArray *_favoriteArray;
 	NSDictionary *_companyDic;
 	NSArray *_companyArray;
 	NSArray *_companyArrayHtmlOnly;
@@ -71,16 +72,28 @@ static bool isFirstAccess = YES;
         [self doesNotRecognizeSelector:_cmd];
     }
     self = [super init];
-//	_historyArray = [[NSMutableArray alloc] init];
 	NSArray * paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
 	NSString *docPath = [paths objectAtIndex:0];
 	NSString *historyArchivePath = [docPath stringByAppendingPathComponent:@"history.dat"];
 	_historyArray = [NSKeyedUnarchiver unarchiveObjectWithFile:historyArchivePath];
 	if (_historyArray) {
 		NSLog(@"%s", __func__);
-		NSLog(@"回档成功");
+		NSLog(@"历史记录回档成功");
 	} else {
 		_historyArray = [NSMutableArray new];
+		NSLog(@"%s", __func__);
+		NSLog(@"历史记录初始化成功");
+	}
+	
+	NSString *favoriteArchivePath = [docPath stringByAppendingPathComponent:@"favorite.dat"];
+	_favoriteArray = [NSKeyedUnarchiver unarchiveObjectWithFile:favoriteArchivePath];
+	if (_favoriteArray) {
+		NSLog(@"%s", __func__);
+		NSLog(@"收藏回档成功");
+	} else {
+		_favoriteArray = [NSMutableArray new];
+		NSLog(@"%s", __func__);
+		NSLog(@"收藏初始化成功");
 	}
 	
 	NSString *dicPath = [[NSBundle mainBundle] pathForResource:@"companyDic" ofType:@"txt"];
@@ -129,6 +142,53 @@ static bool isFirstAccess = YES;
 	return [NSArray arrayWithArray:_historyArray];
 }
 
+- (void)archiveHistoryArray {
+	NSArray * paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+	NSString *docPath = [paths firstObject];
+	NSString *historyArchivePath = [docPath stringByAppendingPathComponent:@"history.dat"];
+	if ([NSKeyedArchiver archiveRootObject:_historyArray toFile:historyArchivePath]) {
+		NSLog(@"%s", __func__);
+		NSLog(@"历史记录归档成功");
+	}
+}
+
+- (void)addFavoriteRecord:(Express *)express {
+	if (_favoriteArray.count == 0) {
+		[_favoriteArray addObject:express];
+	} else {
+		for (NSInteger i = 0; i < _favoriteArray.count; i++) {
+			Express *record = _favoriteArray[i];
+			if ([record.nu isEqualToString:express.nu] && [record.com isEqualToString:express.com]) {
+				[_favoriteArray removeObjectAtIndex:i];
+				break;
+			}
+		}
+		[_favoriteArray insertObject:express atIndex:0];
+	}
+}
+
+- (void)removeFavoriteRecordAtIndex:(NSInteger)index {
+	[_favoriteArray removeObjectAtIndex:index];
+}
+
+- (void)removeAllFavoriteRecord {
+	[_favoriteArray removeAllObjects];
+}
+
+- (NSArray *)getFavoriteRecords {
+	return [NSArray arrayWithArray:_favoriteArray];
+}
+
+- (void)archiveFavoriteArray {
+	NSArray * paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+	NSString *docPath = [paths firstObject];
+	NSString *historyArchivePath = [docPath stringByAppendingPathComponent:@"favorite.dat"];
+	if ([NSKeyedArchiver archiveRootObject:_favoriteArray toFile:historyArchivePath]) {
+		NSLog(@"%s", __func__);
+		NSLog(@"收藏归档成功");
+	}
+}
+
 - (NSString *)translateCompanyNameIntoCompanyID:(NSString *)companyName {
 	return [_companyDic valueForKey:companyName];
 }
@@ -150,14 +210,6 @@ static bool isFirstAccess = YES;
 	return NO;
 }
 
-- (void)archiveHistoryArray {
-	NSArray * paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-	NSString *docPath = [paths objectAtIndex:0];
-	NSString *historyArchivePath = [docPath stringByAppendingPathComponent:@"history.dat"];
-	if ([NSKeyedArchiver archiveRootObject:_historyArray toFile:historyArchivePath]) {
-		NSLog(@"%s", __func__);
-		NSLog(@"归档成功");
-	}
-}
+
 
 @end

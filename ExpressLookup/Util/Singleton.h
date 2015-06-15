@@ -12,14 +12,25 @@
 @interface Singleton : NSObject
 
 + (Singleton*)sharedInstance;
+// 历史记录
 - (void)addHistoryRecord:(Express *)express;
 - (void)removeHistoryRecordAtIndex:(NSInteger)index;
 - (void)removeAllHistoryRecord;
 - (NSArray *)getHistoryRecords;
+- (void)archiveHistoryArray;
+
+// 收藏
+- (void)addFavoriteRecord:(Express *)express;
+- (void)removeFavoriteRecordAtIndex:(NSInteger)index;
+- (void)removeAllFavoriteRecord;
+- (NSArray *)getFavoriteRecords;
+- (void)archiveFavoriteArray;
+
+
 - (NSString *)translateCompanyNameIntoCompanyID:(NSString *)companyName;
 - (NSArray *)getCompanyNameArray;
 - (NSArray *)gatHtmlOnlyCompanyNameArray;
 - (BOOL)isHtmlOnly:(NSString *)companyName;
-- (void)archiveHistoryArray;
+
 
 @end

@@ -44,6 +44,7 @@
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 	NSLog(@"%s", __func__);
 	[[Singleton sharedInstance] archiveHistoryArray];
+	[[Singleton sharedInstance] archiveFavoriteArray];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {

@@ -12,10 +12,11 @@
 #import "ResultTableViewController.h"
 
 @interface MyExpressTableViewController ()
-@property (nonatomic, retain) NSArray *historyArray;
+@property (nonatomic, retain) NSArray *dataSource;
 @property (nonatomic, retain) UIBarButtonItem *rightButtonBegin;
 @property (nonatomic, retain) UIBarButtonItem *rightButtonFinish;
 @property (nonatomic, retain) UIBarButtonItem *leftButton;
+@property (nonatomic, retain) UISegmentedControl *segmentedControl;
 
 @end
 
@@ -30,21 +31,26 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	[[self navigationItem] setTitle:@"历史记录"];
 	_rightButtonBegin = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(switchEditMode:)];
 	_rightButtonFinish = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemReply target:self action:@selector(switchEditMode:)];
 	_leftButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(deleteSelectedCells:)];
 	[[self navigationItem] setRightBarButtonItem:_rightButtonBegin animated:YES];
 	
+	_segmentedControl = [[UISegmentedControl alloc] initWithItems:@[@"历史记录", @"收藏"]];
+	[_segmentedControl setFrame:CGRectMake(0, 0, 90, 30)];
+	[_segmentedControl addTarget:self action:@selector(segmentValueChanged:) forControlEvents:UIControlEventValueChanged];
+	[[self navigationItem] setTitleView:_segmentedControl];
+	[_segmentedControl setSelectedSegmentIndex:0];
+	[self segmentValueChanged:_segmentedControl];
+	
 	UINib *nib = [UINib nibWithNibName:@"ExpressInfoTableViewCell" bundle:nil];
 	[[self tableView] registerNib:nib forCellReuseIdentifier:@"HistoryCell"];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-	[super viewWillAppear:animated];
-	[self setHistoryArray:[[Singleton sharedInstance] getHistoryRecords]];
-	[[self tableView] reloadData];
-}
+//- (void)viewWillAppear:(BOOL)animated {
+//	[super viewWillAppear:animated];
+//	
+//}
 
 - (void)viewDidDisappear:(BOOL)animated {
 	[super viewDidDisappear:animated];
@@ -62,12 +68,12 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return _historyArray.count;
+    return _dataSource.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	ResultTableViewCell *cell = [[self tableView] dequeueReusableCellWithIdentifier:@"HistoryCell"];
-	Express *express = _historyArray[indexPath.row];
+	Express *express = _dataSource[indexPath.row];
 	[cell refreshCellWithType:expressInfo Express:express Index:indexPath.row];
 	return cell;
 }
@@ -80,7 +86,7 @@
 	if ([tableView isEditing]) {
 		[[self navigationItem] setLeftBarButtonItem:_leftButton animated:YES];
 	} else {
-		Express *express = [_historyArray objectAtIndex:indexPath.row];
+		Express *express = [_dataSource objectAtIndex:indexPath.row];
 		ResultTableViewController *resultVC = [[ResultTableViewController alloc] initWithExpressNumber:express.nu andCompany:express.companyName];
 		[[self navigationController] pushViewController:resultVC animated:YES];
 	}
@@ -112,9 +118,20 @@
 	for (NSInteger i = 0; i < selectedCells.count; i++) {
 		NSIndexPath *path = [selectedCells objectAtIndex:i];
 		NSInteger index = path.row;
-		[[Singleton sharedInstance] removeHistoryRecordAtIndex:index - i];
+		if (_segmentedControl.selectedSegmentIndex == 0) {
+			[[Singleton sharedInstance] removeHistoryRecordAtIndex:index - i];
+		}
+		else if (_segmentedControl.selectedSegmentIndex == 1) {
+			[[Singleton sharedInstance] removeFavoriteRecordAtIndex:index - i];
+		}
 	}
-	[self setHistoryArray:[[Singleton sharedInstance] getHistoryRecords]];
+	if (_segmentedControl.selectedSegmentIndex == 0) {
+		[self setDataSource:[[Singleton sharedInstance] getHistoryRecords]];
+	}
+	else if (_segmentedControl.selectedSegmentIndex == 1) {
+		[self setDataSource:[[Singleton sharedInstance] getFavoriteRecords]];
+	}
+	
 	[[self tableView] deleteRowsAtIndexPaths:selectedCells withRowAnimation:UITableViewRowAnimationLeft];
 	[[self navigationItem] setLeftBarButtonItem:nil animated:YES];
 }
@@ -125,6 +142,21 @@
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
 	return YES;
+}
+
+- (void)segmentValueChanged:(UISegmentedControl *)sender {
+	NSLog(@"%ld", sender.selectedSegmentIndex);
+	if (sender.selectedSegmentIndex == 0) {
+		[self setDataSource:[[Singleton sharedInstance] getHistoryRecords]];
+		[[self tableView] reloadData];
+	}
+	else if (sender.selectedSegmentIndex == 1) {
+		[self setDataSource:[[Singleton sharedInstance] getFavoriteRecords]];
+		[[self tableView] reloadData];
+	}
+	[[self tableView] setEditing:NO animated:YES];
+	[[self navigationItem] setRightBarButtonItem:_rightButtonBegin animated:YES];
+	[[self navigationItem] setLeftBarButtonItem:nil animated:YES];
 }
 
 @end
