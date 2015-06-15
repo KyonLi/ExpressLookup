@@ -171,6 +171,26 @@ static bool isFirstAccess = YES;
 	[_favoriteArray removeObjectAtIndex:index];
 }
 
+- (void)removeFavoriteRecordByExpressNumber:(NSString *)nu andCompanyName:(NSString *)com {
+	for (NSInteger i = 0; i < _favoriteArray.count; i++) {
+		Express *express = [_favoriteArray objectAtIndex:i];
+		if ([express.nu isEqualToString:nu] && [express.companyName isEqualToString:com]) {
+			[_favoriteArray removeObjectAtIndex:i];
+			break;
+		}
+	}
+}
+
+- (BOOL)isFavorited:(NSString *)nu andCompanyName:(NSString *)com {
+	for (NSInteger i = 0; i < _favoriteArray.count; i++) {
+		Express *express = [_favoriteArray objectAtIndex:i];
+		if ([express.nu isEqualToString:nu] && [express.companyName isEqualToString:com]) {
+			return YES;
+		}
+	}
+	return NO;
+}
+
 - (void)removeAllFavoriteRecord {
 	[_favoriteArray removeAllObjects];
 }

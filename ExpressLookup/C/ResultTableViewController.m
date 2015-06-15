@@ -20,6 +20,8 @@
 @property (nonatomic, retain) NSArray *dataArray;
 @property (nonatomic, assign) NSInteger infoRowNumber;
 @property (nonatomic, retain) UIAlertView *alertView;
+@property (nonatomic, retain) UIBarButtonItem *favAdd;
+@property (nonatomic, retain) UIBarButtonItem *favRemove;
 
 @end
 
@@ -36,6 +38,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	[[self navigationItem] setTitle:@"查询结果"];
+	
+	_favAdd = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"star-empty"] style:UIBarButtonItemStylePlain target:self action:@selector(addToFavorite:)];
+	_favRemove = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"star-full"] style:UIBarButtonItemStylePlain target:self action:@selector(removeFromFavorite:)];
+	if ([[Singleton sharedInstance] isFavorited:_expressNumber andCompanyName:_company]) {
+		[[self navigationItem] setRightBarButtonItem:_favRemove animated:YES];
+	} else {
+		[[self navigationItem] setRightBarButtonItem:_favAdd animated:YES];
+	}
 	
 	[[self tableView] setBackgroundColor:[UIColor colorWithRed:0.922 green:0.922 blue:0.945 alpha:1.000]];
 	
@@ -131,6 +141,25 @@
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
 	[[self navigationController] popViewControllerAnimated:YES];
+}
+
+- (void)addToFavorite:(UIBarButtonItem *)sender {
+	[[Singleton sharedInstance] addFavoriteRecord:_express];
+	MBProgressHUD *hud = [[MBProgressHUD alloc] initWithView:self.view];
+	[[self view] addSubview:hud];
+	hud.labelText = @"收藏成功";
+	hud.mode = MBProgressHUDModeText;
+	[hud showAnimated:YES whileExecutingBlock:^{
+		sleep(1.5);
+	} completionBlock:^{
+		[hud removeFromSuperview];
+	}];
+	[[self navigationItem] setRightBarButtonItem:_favRemove animated:YES];
+}
+
+- (void)removeFromFavorite:(UIBarButtonItem *)sender {
+	[[Singleton sharedInstance] removeFavoriteRecordByExpressNumber:_expressNumber andCompanyName:_company];
+	[[self navigationItem] setRightBarButtonItem:_favAdd animated:YES];
 }
 
 @end

@@ -169,7 +169,7 @@
 	}
 }
 
-- (long long) fileSizeAtPath:(NSString*) filePath{
+- (long long)fileSizeAtPath:(NSString*)filePath{
 	NSFileManager* manager = [NSFileManager defaultManager];
 	if ([manager fileExistsAtPath:filePath]){
 		return [[manager attributesOfItemAtPath:filePath error:nil] fileSize];
@@ -177,7 +177,7 @@
 	return 0;
 }
 
-- (float ) folderSizeAtPath:(NSString*) folderPath{
+- (float )folderSizeAtPath:(NSString*)folderPath{
 	NSFileManager* manager = [NSFileManager defaultManager];
 	if (![manager fileExistsAtPath:folderPath]) {
 		return 0;

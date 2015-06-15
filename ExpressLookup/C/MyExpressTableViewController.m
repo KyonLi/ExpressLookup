@@ -47,10 +47,13 @@
 	[[self tableView] registerNib:nib forCellReuseIdentifier:@"HistoryCell"];
 }
 
-//- (void)viewWillAppear:(BOOL)animated {
-//	[super viewWillAppear:animated];
-//	
-//}
+- (void)viewWillAppear:(BOOL)animated {
+	[super viewWillAppear:animated];
+	if (_segmentedControl.selectedSegmentIndex == 1) {
+		[self setDataSource:[[Singleton sharedInstance] getFavoriteRecords]];
+		[[self tableView] reloadData];
+	}
+}
 
 - (void)viewDidDisappear:(BOOL)animated {
 	[super viewDidDisappear:animated];
@@ -145,7 +148,6 @@
 }
 
 - (void)segmentValueChanged:(UISegmentedControl *)sender {
-	NSLog(@"%ld", sender.selectedSegmentIndex);
 	if (sender.selectedSegmentIndex == 0) {
 		[self setDataSource:[[Singleton sharedInstance] getHistoryRecords]];
 		[[self tableView] reloadData];

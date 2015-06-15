@@ -22,8 +22,10 @@
 // 收藏
 - (void)addFavoriteRecord:(Express *)express;
 - (void)removeFavoriteRecordAtIndex:(NSInteger)index;
+- (void)removeFavoriteRecordByExpressNumber:(NSString *)nu andCompanyName:(NSString *)com;
 - (void)removeAllFavoriteRecord;
 - (NSArray *)getFavoriteRecords;
+- (BOOL)isFavorited:(NSString *)nu andCompanyName:(NSString *)com;
 - (void)archiveFavoriteArray;
 
 
