@@ -12,8 +12,10 @@
 #import "DownloadData.h"
 #import "UIButton+Bootstrap.h"
 #import "Company.h"
+#import "Help.h"
 
 @interface LookupViewController () <MXPullDownMenuDelegate>
+@property (weak, nonatomic) IBOutlet UIImageView *additionalBackgroundImage;
 @property (weak, nonatomic) IBOutlet UIView *companyView;
 @property (weak, nonatomic) IBOutlet UITextField *textField;
 @property (weak, nonatomic) IBOutlet UIButton *searchButton;
@@ -34,6 +36,9 @@
 		[menu setDelegate:self];
 		[self.view addSubview:menu];
 	}
+	
+	CGSize imageSize = _additionalBackgroundImage.frame.size;
+	[_additionalBackgroundImage setImage:[Help thumbnailWithImageWithoutScale:[UIImage imageNamed:@"background"] size:imageSize]];
 }
 
 - (void)viewDidLoad {

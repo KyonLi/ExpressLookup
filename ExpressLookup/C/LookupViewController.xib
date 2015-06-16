@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LookupViewController">
             <connections>
+                <outlet property="additionalBackgroundImage" destination="f1p-4L-zpe" id="8d1-c5-P0N"/>
                 <outlet property="companyView" destination="haX-C6-6TU" id="ve6-wY-7Cq"/>
                 <outlet property="searchButton" destination="VLo-Ec-HjF" id="WN9-Qq-bwD"/>
                 <outlet property="textField" destination="5DF-Dn-9dD" id="nVX-xo-0xs"/>
@@ -20,6 +21,9 @@
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lookup_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="UcN-tX-0f0">
                     <rect key="frame" x="0.0" y="64" width="600" height="490"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f1p-4L-zpe">
+                    <rect key="frame" x="10" y="80" width="580" height="420"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="haX-C6-6TU" userLabel="快递公司">
                     <rect key="frame" x="40" y="124" width="520" height="60"/>
@@ -56,7 +60,9 @@
                 <constraint firstItem="5DF-Dn-9dD" firstAttribute="top" secondItem="haX-C6-6TU" secondAttribute="bottom" constant="50" id="063-4c-C1y"/>
                 <constraint firstAttribute="trailing" secondItem="pAy-kp-tW0" secondAttribute="trailing" constant="10" id="0UC-PS-yCI"/>
                 <constraint firstItem="VLo-Ec-HjF" firstAttribute="top" secondItem="5DF-Dn-9dD" secondAttribute="bottom" constant="60" id="120-El-ChK"/>
+                <constraint firstAttribute="bottom" secondItem="f1p-4L-zpe" secondAttribute="bottom" constant="100" id="1En-kK-Gia"/>
                 <constraint firstItem="haX-C6-6TU" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="124" id="42w-vZ-VuP"/>
+                <constraint firstItem="f1p-4L-zpe" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="80" id="5ZF-n6-8Hl"/>
                 <constraint firstItem="VLo-Ec-HjF" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="80" id="9RH-ex-EU5"/>
                 <constraint firstAttribute="trailing" secondItem="UcN-tX-0f0" secondAttribute="trailing" id="Dfy-wR-HUA"/>
                 <constraint firstAttribute="bottom" secondItem="UcN-tX-0f0" secondAttribute="bottom" constant="46" id="EUJ-1P-DxF"/>
@@ -66,6 +72,8 @@
                 <constraint firstItem="haX-C6-6TU" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="40" id="MvN-QW-vmQ"/>
                 <constraint firstAttribute="trailing" secondItem="haX-C6-6TU" secondAttribute="trailing" constant="40" id="RFa-Y7-gua"/>
                 <constraint firstItem="UcN-tX-0f0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Wnq-Au-2Us"/>
+                <constraint firstAttribute="trailing" secondItem="f1p-4L-zpe" secondAttribute="trailing" constant="10" id="Yvp-lg-ZYu"/>
+                <constraint firstItem="f1p-4L-zpe" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="cLm-Zw-JUB"/>
                 <constraint firstItem="pAy-kp-tW0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="gZp-Qn-e2J"/>
                 <constraint firstAttribute="trailing" secondItem="VLo-Ec-HjF" secondAttribute="trailing" constant="80" id="iue-az-XHa"/>
                 <constraint firstItem="5DF-Dn-9dD" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="40" id="mjn-Ng-M5n"/>

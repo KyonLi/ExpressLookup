@@ -88,4 +88,27 @@
 	return dic;
 }
 
++ (UIImage *)thumbnailWithImageWithoutScale:(UIImage *)image size:(CGSize)aSize {
+	UIImage *newimage;
+	if (nil == image) {
+		newimage = nil;
+	}
+	else{
+		CGSize oldsize = image.size;
+		CGRect rect;
+		if (aSize.width/aSize.height > oldsize.width/oldsize.height) {
+			rect.size.width = aSize.height*oldsize.width/oldsize.height;
+			rect.size.height = aSize.height;
+		} else {
+			rect.size.width = aSize.width;
+			rect.size.height = aSize.width*oldsize.height/oldsize.width;
+		}
+		UIGraphicsBeginImageContext(rect.size);
+		[image drawInRect:rect];
+		newimage = UIGraphicsGetImageFromCurrentImageContext();
+		UIGraphicsEndImageContext();
+	}
+	return newimage;
+}
+
 @end
