@@ -22,7 +22,7 @@
             block (express, nil);
         }
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        NSLog(@"failed");
+//        NSLog(@"failed");
 		NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:@"2", @"status", @"数据获取失败，请检查网络连接并稍后再试", @"message", nil];
 		Express *express = [[Express alloc] initWithDic:dic];
         if (block) {
@@ -39,7 +39,7 @@
 			block (express, nil);
 		}
 	} failure:^(NSURLSessionDataTask *task, NSError *error) {
-		NSLog(@"failed");
+//		NSLog(@"failed");
 		NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:@"2", @"status", @"数据获取失败，请检查网络连接并稍后再试", @"message", nil];
 		Express *express = [[Express alloc] initWithDic:dic];
 		if (block) {

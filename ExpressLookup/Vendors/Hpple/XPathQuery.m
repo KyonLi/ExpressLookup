@@ -113,21 +113,21 @@ NSArray *PerformXPathQuery(xmlDocPtr doc, NSString *query)
     /* Create xpath evaluation context */
     xpathCtx = xmlXPathNewContext(doc);
     if(xpathCtx == NULL) {
-        NSLog(@"Unable to create XPath context.");
+//        NSLog(@"Unable to create XPath context.");
         return nil;
     }
 
     /* Evaluate xpath expression */
     xpathObj = xmlXPathEvalExpression((xmlChar *)[query cStringUsingEncoding:NSUTF8StringEncoding], xpathCtx);
     if(xpathObj == NULL) {
-        NSLog(@"Unable to evaluate XPath.");
+//        NSLog(@"Unable to evaluate XPath.");
         xmlXPathFreeContext(xpathCtx);
         return nil;
     }
 
     xmlNodeSetPtr nodes = xpathObj->nodesetval;
     if (!nodes) {
-        NSLog(@"Nodes was nil.");
+//        NSLog(@"Nodes was nil.");
         xmlXPathFreeObject(xpathObj);
         xmlXPathFreeContext(xpathCtx);
         return nil;
@@ -161,7 +161,7 @@ NSArray *PerformHTMLXPathQueryWithEncoding(NSData *document, NSString *query,NSS
 
     doc = htmlReadMemory([document bytes], (int)[document length], "", encoded, HTML_PARSE_NOWARNING | HTML_PARSE_NOERROR);
     if (doc == NULL) {
-        NSLog(@"Unable to parse.");
+//        NSLog(@"Unable to parse.");
         return nil;
     }
     
@@ -185,7 +185,7 @@ NSArray *PerformXMLXPathQueryWithEncoding(NSData *document, NSString *query,NSSt
     doc = xmlReadMemory([document bytes], (int)[document length], "", encoded, XML_PARSE_RECOVER);
     
     if (doc == NULL) {
-        NSLog(@"Unable to parse.");
+//        NSLog(@"Unable to parse.");
         return nil;
     }
     

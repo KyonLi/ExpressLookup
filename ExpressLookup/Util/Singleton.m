@@ -77,23 +77,23 @@ static bool isFirstAccess = YES;
 	NSString *historyArchivePath = [docPath stringByAppendingPathComponent:@"history.dat"];
 	_historyArray = [NSKeyedUnarchiver unarchiveObjectWithFile:historyArchivePath];
 	if (_historyArray) {
-		NSLog(@"%s", __func__);
-		NSLog(@"历史记录回档成功");
+//		NSLog(@"%s", __func__);
+//		NSLog(@"历史记录回档成功");
 	} else {
 		_historyArray = [NSMutableArray new];
-		NSLog(@"%s", __func__);
-		NSLog(@"历史记录初始化成功");
+//		NSLog(@"%s", __func__);
+//		NSLog(@"历史记录初始化成功");
 	}
 	
 	NSString *favoriteArchivePath = [docPath stringByAppendingPathComponent:@"favorite.dat"];
 	_favoriteArray = [NSKeyedUnarchiver unarchiveObjectWithFile:favoriteArchivePath];
 	if (_favoriteArray) {
-		NSLog(@"%s", __func__);
-		NSLog(@"收藏回档成功");
+//		NSLog(@"%s", __func__);
+//		NSLog(@"收藏回档成功");
 	} else {
 		_favoriteArray = [NSMutableArray new];
-		NSLog(@"%s", __func__);
-		NSLog(@"收藏初始化成功");
+//		NSLog(@"%s", __func__);
+//		NSLog(@"收藏初始化成功");
 	}
 	
 	NSString *dicPath = [[NSBundle mainBundle] pathForResource:@"companyDic" ofType:@"plist"];
@@ -147,8 +147,8 @@ static bool isFirstAccess = YES;
 	NSString *docPath = [paths firstObject];
 	NSString *historyArchivePath = [docPath stringByAppendingPathComponent:@"history.dat"];
 	if ([NSKeyedArchiver archiveRootObject:_historyArray toFile:historyArchivePath]) {
-		NSLog(@"%s", __func__);
-		NSLog(@"历史记录归档成功");
+//		NSLog(@"%s", __func__);
+//		NSLog(@"历史记录归档成功");
 	}
 }
 
@@ -204,8 +204,8 @@ static bool isFirstAccess = YES;
 	NSString *docPath = [paths firstObject];
 	NSString *historyArchivePath = [docPath stringByAppendingPathComponent:@"favorite.dat"];
 	if ([NSKeyedArchiver archiveRootObject:_favoriteArray toFile:historyArchivePath]) {
-		NSLog(@"%s", __func__);
-		NSLog(@"收藏归档成功");
+//		NSLog(@"%s", __func__);
+//		NSLog(@"收藏归档成功");
 	}
 }
 
