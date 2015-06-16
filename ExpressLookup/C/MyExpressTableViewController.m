@@ -53,6 +53,10 @@
 		[self setDataSource:[[Singleton sharedInstance] getFavoriteRecords]];
 		[[self tableView] reloadData];
 	}
+	else if (_segmentedControl.selectedSegmentIndex == 0) {
+		[self setDataSource:[[Singleton sharedInstance] getHistoryRecords]];
+		[[self tableView] reloadData];
+	}
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
