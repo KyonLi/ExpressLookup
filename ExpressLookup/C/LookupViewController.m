@@ -48,7 +48,7 @@
 //	[_searchButton bootstrapStyle];
 	[_searchButton addAwesomeIcon:FAIconSearch beforeTitle:YES];
 	
-	_alertView = [[UIAlertView alloc] initWithTitle:@"请选择快递公司" message:nil delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
+	_alertView = [[UIAlertView alloc] initWithTitle:@"提示" message:@"请选择快递公司" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
 }
 
 - (void)PullDownMenu:(MXPullDownMenu *)pullDownMenu didSelectRowAtColumn:(NSInteger)column row:(NSInteger)row {
@@ -66,7 +66,7 @@
 	}
 }
 
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
 	[_textField resignFirstResponder];
 }
 

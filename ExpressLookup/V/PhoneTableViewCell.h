@@ -10,6 +10,7 @@
 @class PhoneNumber;
 
 @interface PhoneTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *detailLabel;
 - (void)refreshCell:(PhoneNumber *)phoneNum;
 
 @end

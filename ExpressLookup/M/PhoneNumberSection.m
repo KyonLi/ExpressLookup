@@ -15,6 +15,7 @@
 	if (self = [super init]) {
 		_phoneNumbers = [NSMutableArray new];
 		[self setValuesForKeysWithDictionary:dic];
+		_phoneCount = _phoneNumbers.count;
 	}
 	return self;
 }
@@ -25,7 +26,6 @@
 
 - (void)setValue:(id)value forUndefinedKey:(NSString *)key {
 	NSArray *array = value;
-	_phoneCount = array.count;
 	for (NSDictionary *dic in array) {
 		PhoneNumber *phoneNumber = [[PhoneNumber alloc] initWithDic:dic];
 		[_phoneNumbers addObject:phoneNumber];
