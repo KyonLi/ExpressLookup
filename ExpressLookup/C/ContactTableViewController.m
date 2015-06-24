@@ -102,6 +102,7 @@
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
 	[self returnToOriginalData];
+	[searchBar setShowsCancelButton:NO animated:YES];
 }
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
@@ -119,6 +120,11 @@
 	[[self tableView] reloadData];
 	[[self navigationItem] setLeftBarButtonItem:_leftButton animated:YES];
 	[_searchBar resignFirstResponder];
+	[searchBar setShowsCancelButton:NO animated:YES];
+}
+
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
+	[searchBar setShowsCancelButton:YES animated:YES];
 }
 
 - (void)returnToOriginalData {
