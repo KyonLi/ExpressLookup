@@ -9,9 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface PhoneNumber : NSObject
-@property (nonatomic, copy, readonly) NSString *name;
-@property (nonatomic, copy, readonly) NSURL *iconUrl;
-@property (nonatomic, copy, readonly) NSString *phoneNumber;
+@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly) NSURL *iconUrl;
+@property (nonatomic, readonly) NSString *phoneNumber;
 
 - (instancetype)initWithDic:(NSDictionary *)dic;
 

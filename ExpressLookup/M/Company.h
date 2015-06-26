@@ -9,8 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface Company : NSObject
-@property (nonatomic, copy, readonly) NSString *comName;
-@property (nonatomic, copy, readonly) NSString *comPinYin;
+@property (nonatomic, readonly) NSString *comName;
+@property (nonatomic, readonly) NSString *comPinYin;
 
 - (instancetype)initWithCompanyName:(NSString *)comName;
 

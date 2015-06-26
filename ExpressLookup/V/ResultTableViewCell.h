@@ -11,7 +11,7 @@
 @class Express;
 
 @interface ResultTableViewCell : UITableViewCell
-@property (nonatomic, retain) NSString *type;
+@property (nonatomic) NSString *type;
 
 - (void)refreshCellWithType:(cellType)cellType Express:(Express *)express Index:(NSInteger)index;
 

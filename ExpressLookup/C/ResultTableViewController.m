@@ -14,14 +14,14 @@
 #import "ResultTableViewCell.h"
 
 @interface ResultTableViewController () <UIAlertViewDelegate>
-@property (nonatomic, copy) NSString *expressNumber;
-@property (nonatomic, copy) NSString *company;
-@property (nonatomic, retain) Express *express;
-@property (nonatomic, retain) NSArray *dataArray;
-@property (nonatomic, assign) NSInteger infoRowNumber;
-@property (nonatomic, retain) UIAlertView *alertView;
-@property (nonatomic, retain) UIBarButtonItem *favAdd;
-@property (nonatomic, retain) UIBarButtonItem *favRemove;
+@property (nonatomic) NSString *expressNumber;
+@property (nonatomic) NSString *company;
+@property (nonatomic) Express *express;
+@property (nonatomic) NSArray *dataArray;
+@property (nonatomic) NSInteger infoRowNumber;
+@property (nonatomic) UIAlertView *alertView;
+@property (nonatomic) UIBarButtonItem *favAdd;
+@property (nonatomic) UIBarButtonItem *favRemove;
 
 @end
 

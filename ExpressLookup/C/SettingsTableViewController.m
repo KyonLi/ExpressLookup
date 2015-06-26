@@ -10,9 +10,9 @@
 #import "MBProgressHUD.h"
 
 @interface SettingsTableViewController () <UIAlertViewDelegate>
-@property (nonatomic, retain) UISwitch *orderSwitch;
-@property (nonatomic, retain) UITableViewCell *orderCell;
-@property (nonatomic, retain) UIAlertView *clearHistoryAlertView;
+@property (nonatomic) UISwitch *orderSwitch;
+@property (nonatomic) UITableViewCell *orderCell;
+@property (nonatomic) UIAlertView *clearHistoryAlertView;
 
 @end
 

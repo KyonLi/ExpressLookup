@@ -9,9 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface PhoneNumberSection : NSObject
-@property (nonatomic, copy, readonly) NSString *section;
-@property (nonatomic, assign, readonly) NSInteger phoneCount;
-@property (nonatomic, copy, readonly) NSMutableArray *phoneNumbers;
+@property (nonatomic, readonly) NSString *section;
+@property (nonatomic, readonly) NSInteger phoneCount;
+@property (nonatomic, readonly) NSMutableArray *phoneNumbers;
 
 - (instancetype)initWithDic:(NSDictionary *)dic;
 

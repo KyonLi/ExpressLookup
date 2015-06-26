@@ -12,9 +12,9 @@
 #import "PhoneTableViewCell.h"
 
 @interface ContactTableViewController ()
-@property (nonatomic, retain) NSArray *phoneSections;
-@property (nonatomic, retain) NSArray *dataSource;
-@property (nonatomic, retain) UIBarButtonItem *leftButton;
+@property (nonatomic) NSArray *phoneSections;
+@property (nonatomic) NSArray *dataSource;
+@property (nonatomic) UIBarButtonItem *leftButton;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
 @end

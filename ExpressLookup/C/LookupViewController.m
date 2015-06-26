@@ -19,8 +19,8 @@
 @property (weak, nonatomic) IBOutlet UIView *companyView;
 @property (weak, nonatomic) IBOutlet UITextField *textField;
 @property (weak, nonatomic) IBOutlet UIButton *searchButton;
-@property (retain, nonatomic) UIAlertView *alertView;
-@property (copy, nonatomic) NSString *companyName;
+@property (nonatomic) UIAlertView *alertView;
+@property (nonatomic) NSString *companyName;
 
 @end
 

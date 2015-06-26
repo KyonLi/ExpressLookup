@@ -12,11 +12,11 @@
 #import "ResultTableViewController.h"
 
 @interface MyExpressTableViewController ()
-@property (nonatomic, retain) NSArray *dataSource;
-@property (nonatomic, retain) UIBarButtonItem *rightButtonBegin;
-@property (nonatomic, retain) UIBarButtonItem *rightButtonFinish;
-@property (nonatomic, retain) UIBarButtonItem *leftButton;
-@property (nonatomic, retain) UISegmentedControl *segmentedControl;
+@property (nonatomic) NSArray *dataSource;
+@property (nonatomic) UIBarButtonItem *rightButtonBegin;
+@property (nonatomic) UIBarButtonItem *rightButtonFinish;
+@property (nonatomic) UIBarButtonItem *leftButton;
+@property (nonatomic) UISegmentedControl *segmentedControl;
 
 @end
 
