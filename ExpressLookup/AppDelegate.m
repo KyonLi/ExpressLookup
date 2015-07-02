@@ -18,7 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-	
+	[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
 	if ([[NSUserDefaults standardUserDefaults] objectForKey:@"order"] == nil) {
 //		NSLog(@"%s", __func__);
 //		NSLog(@"初始化偏好设置");
@@ -30,7 +30,6 @@
 	TabBarController *tabBarController = [[TabBarController alloc] init];
 	[_window setRootViewController:tabBarController];
 	[_window makeKeyAndVisible];
-	[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     return YES;
 }
 
